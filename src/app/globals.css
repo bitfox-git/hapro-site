@@ -16,6 +16,7 @@ body *[data-is-root-theme="true"] {
             [col-start] minmax(min-content, 8rem) [col-end]
         )
         [center-end] minmax(1rem, 1fr) [full-end];
+    grid-auto-rows: min-content;
 }
 
 *[data-is-root-theme="true"] > * {

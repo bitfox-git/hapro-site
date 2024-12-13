@@ -17,13 +17,10 @@ export default function Navigation() {
                     </Link>
                 </li>
                 <li>
-                    <Link href="/">Home</Link>
+                    <Link href="/pricing">Pricing</Link>
                 </li>
                 <li>
-                    <Link href="/about">About</Link>
-                </li>
-                <li>
-                    <Link href="/contact">Contact</Link>
+                    <Link href="/faq">FAQ</Link>
                 </li>
             </ul>
         </nav>
