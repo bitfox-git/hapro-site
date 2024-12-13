@@ -1,3 +1,4 @@
+import LandingHero from "@/components/landing/LandingHero";
 import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
@@ -21,5 +22,5 @@ export default function Home({ params: { locale } }: HomeProps) {
 
     const t = useTranslations("home_page");
 
-    return <h1>{t("title")}</h1>;
+    return <LandingHero />;
 }

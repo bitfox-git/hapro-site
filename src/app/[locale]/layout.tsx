@@ -8,11 +8,17 @@ import "@radix-ui/themes/styles.css";
 import "../globals.css";
 import Navigation from "@/components/Navigation";
 
-import { Geologica } from "next/font/google";
+import { Geologica, Lora } from "next/font/google";
 
 const geologica = Geologica({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const lora = Lora({
+    subsets: ["latin"],
+    style: ["normal", "italic"],
+    weight: ["400", "500", "600", "700"],
 });
 
 export function generateStaticParams() {
@@ -41,7 +47,10 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale} className={geologica.className}>
+        <html
+            lang={locale}
+            className={`${geologica.className} ${lora.className}`}
+        >
             <body>
                 <NextIntlClientProvider messages={messages}>
                     <Theme>

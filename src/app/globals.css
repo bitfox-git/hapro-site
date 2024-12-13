@@ -9,14 +9,31 @@
 }
 
 body *[data-is-root-theme="true"] {
+    --col-count: 8;
+
     display: grid;
     grid-template-columns:
-        [full-start] minmax(1rem, 1fr) [center-start] repeat(
-            12,
-            [col-start] minmax(min-content, 8rem) [col-end]
+        [full-start] minmax(
+            calc(100vw / var(--col-count)),
+            1fr
+        ) [center-start] repeat(
+            calc(var(--col-count) - 2),
+            [col-start] minmax(min-content, 10rem) [col-end]
         )
-        [center-end] minmax(1rem, 1fr) [full-end];
+        [center-end] minmax(calc(100vw / var(--col-count)), 1fr) [full-end];
     grid-auto-rows: min-content;
+}
+
+@media (min-width: 834px) {
+    body *[data-is-root-theme="true"] {
+        --col-count: 10;
+    }
+}
+
+@media (min-width: 1440px) {
+    body *[data-is-root-theme="true"] {
+        --col-count: 12;
+    }
 }
 
 *[data-is-root-theme="true"] > * {
@@ -38,6 +55,16 @@ hr {
 /* font */
 /* --------------------------------------------------- */
 
+:root {
+    --font-sm: clamp(0.8rem, 0.139cqi + 0.766rem, 0.891rem);
+    --font-base: clamp(1rem, 0.287cqi + 0.93rem, 1.188rem);
+    --font-md: clamp(1.25rem, 0.509cqi + 1.125rem, 1.583rem);
+    --font-lg: clamp(1.563rem, 0.837cqi + 1.357rem, 2.11rem);
+    --font-xl: clamp(1.953rem, 1.314cqi + 1.63rem, 2.813rem);
+    --font-xxl: clamp(2.441rem, 1.999cqi + 1.95rem, 3.749rem);
+    --font-xxxl: clamp(3.052rem, 2.974cqi + 2.321rem, 4.998rem);
+}
+
 .radix-themes {
     --default-font-family: "Geologica", sans-serif;
 }
@@ -50,7 +77,7 @@ hr {
 .light,
 .light-theme,
 .radix-themes {
-    --color-background: #e0e0e0;
+    --color-background: #f5f5f5;
 }
 
 :root,
