@@ -6,6 +6,14 @@ import { Theme } from "@radix-ui/themes";
 
 import "@radix-ui/themes/styles.css";
 import "../globals.css";
+import Navigation from "@/components/Navigation";
+
+import { Geologica } from "next/font/google";
+
+const geologica = Geologica({
+    subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
 
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
@@ -13,11 +21,13 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
     children,
-    params: { locale },
+    params,
 }: {
     children: React.ReactNode;
-    params: { locale: string };
+    params: Promise<{ locale: string }>;
 }) {
+    const { locale } = await params;
+
     // Ensure that the incoming `locale` is valid
     if (!routing.locales.includes(locale as any)) {
         notFound();
@@ -31,10 +41,13 @@ export default async function LocaleLayout({
     const messages = await getMessages();
 
     return (
-        <html lang={locale}>
+        <html lang={locale} className={geologica.className}>
             <body>
                 <NextIntlClientProvider messages={messages}>
-                    <Theme>{children}</Theme>
+                    <Theme>
+                        <Navigation />
+                        {children}
+                    </Theme>
                 </NextIntlClientProvider>
             </body>
         </html>

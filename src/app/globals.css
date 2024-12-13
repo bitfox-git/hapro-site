@@ -8,6 +8,20 @@
     box-sizing: border-box;
 }
 
+body *[data-is-root-theme="true"] {
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(1rem, 1fr) [center-start] repeat(
+            12,
+            [col-start] minmax(min-content, 8rem) [col-end]
+        )
+        [center-end] minmax(1rem, 1fr) [full-end];
+}
+
+*[data-is-root-theme="true"] > * {
+    grid-column: center;
+}
+
 /* personal preference */
 button {
     cursor: pointer !important;
