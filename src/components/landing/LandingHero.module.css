@@ -27,9 +27,38 @@
     width: 100%;
     height: fit-content;
 
+    .tablet,
+    .desktop {
+        display: none;
+    }
+
     img {
         width: 100%;
         height: auto;
+    }
+}
+
+@media screen and (min-width: 834px) {
+    .illustration {
+        .mobile {
+            display: none;
+        }
+
+        .tablet {
+            display: block;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .illustration {
+        .tablet {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+        }
     }
 }
 

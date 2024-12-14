@@ -4,28 +4,29 @@ import desktopIllustration from "../../assets/landing/hero-illustration-desktop.
 import tabletIllustration from "../../assets/landing/hero-illustration-tablet.svg";
 import mobileIllustration from "../../assets/landing/hero-illustration-mobile.svg";
 
-import { useWindow } from "@/lib/hooks/useWindow";
-
 import styles from "./LandingHero.module.css";
 import { Button, Heading } from "@radix-ui/themes";
 import Image from "next/image";
 
 export default function LandingHero() {
-    const { width } = useWindow();
-
     return (
         <div className={styles.wrapper}>
             <div className={styles.container}>
                 <div className={styles.illustration}>
                     <Image
-                        src={
-                            width >= 1440
-                                ? desktopIllustration
-                                : width >= 834
-                                ? tabletIllustration
-                                : mobileIllustration
-                        }
-                        alt="Illustration"
+                        className={styles.mobile}
+                        src={mobileIllustration}
+                        alt="Mobile Illustration"
+                    />
+                    <Image
+                        className={styles.tablet}
+                        src={tabletIllustration}
+                        alt="Tablet Illustration"
+                    />
+                    <Image
+                        className={styles.desktop}
+                        src={desktopIllustration}
+                        alt="Desktop Illustration"
                     />
                 </div>
                 <div className={styles.text}>
