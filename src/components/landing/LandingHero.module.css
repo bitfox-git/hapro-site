@@ -32,7 +32,7 @@
         display: none;
     }
 
-    img {
+    & img {
         width: 100%;
         height: auto;
     }
@@ -69,7 +69,7 @@
     text-align: center;
     gap: var(--gap);
 
-    h2 {
+    & h2 {
         font-size: var(--font-md);
         max-width: 40ch;
         text-wrap: balance;
@@ -84,7 +84,7 @@
     max-width: 12ch;
     font-size: var(--font-xxxl);
 
-    span {
+    & span {
         font-weight: 600;
         font-style: italic;
         font-family: "Lora", serif;
