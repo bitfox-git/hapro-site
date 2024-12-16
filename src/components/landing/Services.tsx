@@ -11,29 +11,40 @@ import styles from "./Services.module.css";
 import clsx from "clsx";
 
 export default function Services() {
+    const services: Omit<ServiceProps, "index" | "total">[] = [
+        {
+            title: "Remote control",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            imageSrc: Service1Illustration,
+        },
+        {
+            title: "Backups",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            imageSrc: Service2Illustration,
+            align: "right",
+        },
+        {
+            title: "Mass management",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            imageSrc: Service3Illustration,
+        },
+    ];
+
     return (
         <section className={`section ${styles.container}`}>
             <TitleSubtitle title="What we offer" subtitle="Our services" />
             <div className={styles.services}>
-                <Service
-                    index={1}
-                    title="Remote control"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    imageSrc={Service1Illustration}
-                />
-                <Service
-                    index={2}
-                    align="right"
-                    title="Backups"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    imageSrc={Service2Illustration}
-                />
-                <Service
-                    index={3}
-                    title="Mass management"
-                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    imageSrc={Service3Illustration}
-                />
+                {services.map((service, index) => (
+                    <Service
+                        key={service.title}
+                        index={index + 1}
+                        total={services.length}
+                        {...service}
+                    />
+                ))}
             </div>
         </section>
     );
@@ -41,6 +52,7 @@ export default function Services() {
 
 type ServiceProps = Readonly<{
     index: number;
+    total: number;
     title: string;
     description: string;
     imageSrc: StaticImageData;
@@ -48,13 +60,25 @@ type ServiceProps = Readonly<{
     align?: "left" | "right";
 }>;
 
-function Service({ title, description, imageSrc, index, align }: ServiceProps) {
+function Service({
+    title,
+    description,
+    imageSrc,
+    index,
+    total,
+    align,
+}: ServiceProps) {
+    const animationDelay = index * 2.5;
+    const beginValue = `${animationDelay}s;motion.end+${animationDelay}s`;
+
     return (
         <div
             className={clsx(
                 styles.service,
                 align === "right" ? styles.right : styles.left
             )}
+            // we have to reverse the z-index order to make the glow line work, connectors overlap the glow line
+            style={{ zIndex: total - index }}
         >
             <div className={styles.content}>
                 <div className={styles.header}>
@@ -79,17 +103,22 @@ function Service({ title, description, imageSrc, index, align }: ServiceProps) {
                     />
 
                     <mask id="mask">
-                        <use href="#path" stroke="white" stroke-width="3" />
+                        <use href="#path" stroke="white" strokeWidth="3" />
                     </mask>
                     <g mask="url(#mask)">
-                        <use href="#path" stroke="#E0E0E0" stroke-width="3" />
+                        <use href="#path" stroke="#E0E0E0" strokeWidth="3" />
 
                         <circle
                             r="50"
                             fill="#FF8052"
                             filter="url(#blur_filter)"
                         >
-                            <animateMotion dur="4s" repeatCount="indefinite">
+                            <animateMotion
+                                id="motion"
+                                dur="4s"
+                                repeatCount="indefinite"
+                                begin={beginValue}
+                            >
                                 <mpath href="#path" />
                             </animateMotion>
                             <animate
@@ -97,6 +126,7 @@ function Service({ title, description, imageSrc, index, align }: ServiceProps) {
                                 values="10;50;10"
                                 dur="4s"
                                 repeatCount="indefinite"
+                                begin={beginValue}
                             />
                         </circle>
                     </g>

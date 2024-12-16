@@ -82,9 +82,12 @@
     height: auto;
     aspect-ratio: 123/381;
     translate: calc(100% + 2px) -100%;
-    border-radius: 12px;
     z-index: -1;
     animation: glow 2s infinite alternate;
+}
+
+.service:last-child .glowLineConnector {
+    display: none;
 }
 
 .service.right .glowLine {
@@ -100,6 +103,10 @@
         right: 0;
         scale: unset;
         translate: calc(100% + 2px) -100%;
+    }
+
+    .glowLine {
+        width: 30%;
     }
 }
 
