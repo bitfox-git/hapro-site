@@ -1,9 +1,17 @@
 .nav {
+    position: sticky;
+    top: 1rem;
+    z-index: 10;
+    background-color: color-mix(in srgb, var(--gray-5) 30%, transparent);
+    backdrop-filter: brightness(2) blur(1rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    height: 100px;
+    padding: 1rem;
+    width: 100%;
+    max-width: 32rem;
+    margin-inline: auto;
+    border-radius: 12px;
 }
 
 .nav ul {
@@ -25,5 +33,11 @@
 }
 
 .nav ul li.logo {
+    a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
     margin-right: auto;
 }
