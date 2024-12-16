@@ -5,5 +5,5 @@
     font-size: var(--font-base);
     max-width: 50ch;
     text-wrap: balance;
-    color: color-mix(in srgb, var(--gray-12) 70%, transparent);
+    color: color-mix(in lab, var(--gray-12) 70%, transparent);
 }

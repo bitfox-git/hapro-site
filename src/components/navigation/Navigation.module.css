@@ -3,7 +3,7 @@
     top: 1rem;
     z-index: 10;
     background-color: color-mix(
-        in srgb,
+        in lab,
         var(--color-background) 70%,
         transparent
     );

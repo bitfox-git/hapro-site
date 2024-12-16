@@ -6,7 +6,7 @@
     gap: 2rem;
     padding: 2rem;
     border-radius: 10px;
-    background-color: color-mix(in srgb, var(--gray-5) 30%, transparent);
+    background-color: color-mix(in lab, var(--gray-5) 30%, transparent);
 
     min-width: 350px;
 }

@@ -1,6 +1,6 @@
 .container {
     padding-block: 4rem;
-    background: color-mix(in srgb, var(--gray-5) 30%, transparent);
+    background: color-mix(in lab, var(--gray-5) 30%, transparent);
     overflow: hidden;
 }
 
