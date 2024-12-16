@@ -55,7 +55,12 @@ export default async function LocaleLayout({
         >
             <body>
                 <NextIntlClientProvider messages={messages}>
-                    <Theme>
+                    <Theme
+                        accentColor="orange"
+                        grayColor="gray"
+                        panelBackground="solid"
+                        radius="large"
+                    >
                         <div className={styles.container}>
                             <Navigation />
                             {children}

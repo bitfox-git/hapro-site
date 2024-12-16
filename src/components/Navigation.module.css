@@ -2,8 +2,12 @@
     position: sticky;
     top: 1rem;
     z-index: 10;
-    background-color: color-mix(in srgb, var(--gray-5) 30%, transparent);
-    backdrop-filter: brightness(1.4) blur(1rem);
+    background-color: color-mix(
+        in srgb,
+        var(--color-background) 70%,
+        transparent
+    );
+    backdrop-filter: blur(1rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
