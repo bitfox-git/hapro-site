@@ -1,6 +1,7 @@
 .container {
     padding-block: 4rem;
     background: color-mix(in srgb, var(--gray-5) 30%, transparent);
+    overflow: hidden;
 }
 
 .services {
@@ -46,6 +47,7 @@
 }
 
 .content {
+    position: relative;
     grid-column: 1/5;
 }
 
@@ -69,5 +71,40 @@
     position: relative;
     width: 100%;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
+}
+
+.glowLine {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 25%;
+    height: auto;
+    aspect-ratio: 123/381;
+    translate: calc(100% + 2px) -100%;
+    border-radius: 12px;
+    z-index: -1;
+    animation: glow 2s infinite alternate;
+}
+
+.service.right .glowLine {
+    right: unset;
+    left: 0;
+    translate: calc(-100% - 2px) -100%;
+    scale: -1 1;
+}
+
+@media screen and (max-width: 1440px) {
+    .service.right .glowLine {
+        left: unset;
+        right: 0;
+        scale: unset;
+        translate: calc(100% + 2px) -100%;
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .glowLine {
+        display: none;
+    }
 }

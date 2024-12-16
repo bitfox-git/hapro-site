@@ -5,6 +5,8 @@ import Service1Illustration from "../../assets/landing/service-image-remotecontr
 import Service2Illustration from "../../assets/landing/service-image-backups.svg";
 import Service3Illustration from "../../assets/landing/service-image-massmanagement.jpg";
 
+import GlowLine from "../../assets/landing/service-glow-line.svg";
+
 import styles from "./Services.module.css";
 import clsx from "clsx";
 
@@ -42,6 +44,7 @@ type ServiceProps = Readonly<{
     title: string;
     description: string;
     imageSrc: StaticImageData;
+
     align?: "left" | "right";
 }>;
 
@@ -62,6 +65,51 @@ function Service({ title, description, imageSrc, index, align }: ServiceProps) {
                     <Image src={imageSrc} alt={title} />
                 </div>
                 <p className={styles.description}>{description}</p>
+                <svg
+                    className={styles.glowLine}
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="123"
+                    height="381"
+                    viewBox="0 0 123 381"
+                    fill="none"
+                >
+                    <path
+                        id="path"
+                        d="M121 0V347.5C121 365.173 106.673 379.5 89 379.5H0"
+                    />
+
+                    <mask id="mask">
+                        <use href="#path" stroke="white" stroke-width="3" />
+                    </mask>
+                    <g mask="url(#mask)">
+                        <use href="#path" stroke="#E0E0E0" stroke-width="3" />
+
+                        <circle
+                            r="50"
+                            fill="#FF8052"
+                            filter="url(#blur_filter)"
+                        >
+                            <animateMotion dur="4s" repeatCount="indefinite">
+                                <mpath href="#path" />
+                            </animateMotion>
+                            <animate
+                                attributeName="r"
+                                values="10;50;10"
+                                dur="4s"
+                                repeatCount="indefinite"
+                            />
+                        </circle>
+                    </g>
+
+                    <defs>
+                        <filter id="blur_filter" x="0" y="0">
+                            <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="15"
+                            />
+                        </filter>
+                    </defs>
+                </svg>
             </div>
         </div>
     );
