@@ -2,7 +2,6 @@
 
 import React, { ReactNode, useCallback } from "react";
 import { EmblaOptionsType, EmblaCarouselType } from "embla-carousel";
-import { DotButton, useDotButton } from "./CarouselDotButton";
 import {
     PrevButton,
     NextButton,
@@ -33,11 +32,6 @@ export default function Carousel({ slides, options }: PropType) {
         resetOrStop();
     }, []);
 
-    const { selectedIndex, scrollSnaps, onDotButtonClick } = useDotButton(
-        emblaApi,
-        onNavButtonClick
-    );
-
     const {
         prevBtnDisabled,
         nextBtnDisabled,
@@ -46,45 +40,39 @@ export default function Carousel({ slides, options }: PropType) {
     } = usePrevNextButtons(emblaApi, onNavButtonClick);
 
     return (
-        <section className={styles.embla}>
-            <div className={styles.embla__viewport} ref={emblaRef}>
-                <div className={styles.embla__container}>
-                    {slides.map((slide, index) => (
-                        <div className={styles.embla__slide} key={index}>
-                            <div className={styles.embla__slide__number}>
-                                {slide}
+        <>
+            <section className={styles.embla}>
+                <div className={styles.embla__viewport} ref={emblaRef}>
+                    <div className={styles.embla__container}>
+                        {[...slides, ...slides].map((slide, index) => (
+                            <div className={styles.embla__slide} key={index}>
+                                <div className={styles.embla__slide__number}>
+                                    {slide}
+                                </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div className={styles.embla__controls}>
-                <div className={styles.embla__buttons}>
-                    <PrevButton
-                        onClick={onPrevButtonClick}
-                        disabled={prevBtnDisabled}
-                    />
-                    <NextButton
-                        onClick={onNextButtonClick}
-                        disabled={nextBtnDisabled}
-                    />
+                        ))}
+                    </div>
                 </div>
 
-                <div className={styles.embla__dots}>
-                    {scrollSnaps.map((_, index) => (
-                        <DotButton
-                            key={index}
-                            onClick={() => onDotButtonClick(index)}
-                            className={styles.embla__dot.concat(
-                                index === selectedIndex
-                                    ? " ".concat(styles.embla__dotSelected)
-                                    : ""
-                            )}
+                <div className={styles.embla__controls}>
+                    <div className={styles.embla__buttons}>
+                        <PrevButton
+                            onClick={onPrevButtonClick}
+                            disabled={prevBtnDisabled}
                         />
-                    ))}
+                        <NextButton
+                            onClick={onNextButtonClick}
+                            disabled={nextBtnDisabled}
+                        />
+                    </div>
                 </div>
+            </section>
+
+            <div className={styles.desktop}>
+                {slides.map((slide, index) => (
+                    <div key={index}>{slide}</div>
+                ))}
             </div>
-        </section>
+        </>
     );
 }

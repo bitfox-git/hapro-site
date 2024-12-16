@@ -1,5 +1,6 @@
 import Carousel from "@/components/carousel/Carousel";
 import LandingHero from "@/components/landing/LandingHero";
+import ProblemCarousel from "@/components/landing/ProblemCarousel";
 import { Box } from "@radix-ui/themes";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
@@ -30,10 +31,7 @@ export default function Home({ params }: HomeProps) {
         <>
             <LandingHero />
             <Box style={{ gridColumn: "full !important" }}>
-                <Carousel
-                    slides={[0, 1, 2, 3]}
-                    options={{ loop: true, startIndex: 1 }}
-                />
+                <ProblemCarousel />
             </Box>
         </>
     );
