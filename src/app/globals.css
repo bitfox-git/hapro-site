@@ -31,6 +31,17 @@
     }
 }
 
+.section {
+    grid-column: full !important;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 4rem;
+}
+
+.section > * {
+    grid-column: center;
+}
+
 /* personal preference */
 button {
     cursor: pointer !important;

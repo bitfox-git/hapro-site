@@ -69,7 +69,7 @@ export default function ProblemCarousel() {
     ];
 
     return (
-        <section className={styles.section}>
+        <section className="section">
             <TitleSubtitle
                 title="These problems are a thing of the past"
                 subtitle="No need to worry"
