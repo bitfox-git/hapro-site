@@ -4,6 +4,8 @@ import TitleSubtitle from "../type/TitleSubtitle";
 
 import PlaceholderAvatar from "../../assets/landing/placeholder-avatar.jpg";
 
+import styles from "./Testimonials.module.css";
+
 export default function Testimonials() {
     return (
         <section className="section">
@@ -16,18 +18,56 @@ export default function Testimonials() {
                 }
                 subtitle="Don't take our word for it"
             />
-            <Marquee>
+            <Marquee direction="left" duration={60}>
                 <Testimonial
                     quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     picture={PlaceholderAvatar}
-                    name="John Doe"
-                    title="CEO"
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
                 />
                 <Testimonial
                     quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                     picture={PlaceholderAvatar}
                     name="Jane Doe"
-                    title="CTO"
+                    title="CEO & Founder of Acme Inc."
+                />
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
+                />
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
+                />
+            </Marquee>
+            <Marquee direction="right" duration={60}>
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
+                />
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
+                />
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
+                />
+                <Testimonial
+                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    picture={PlaceholderAvatar}
+                    name="Jane Doe"
+                    title="CEO & Founder of Acme Inc."
                 />
             </Marquee>
         </section>
@@ -43,12 +83,18 @@ type TestimonialProps = Readonly<{
 
 function Testimonial({ quote, picture, name, title }: TestimonialProps) {
     return (
-        <div>
+        <div className={styles.testimonial}>
             <blockquote>{quote}</blockquote>
-            <div>
-                <Image src={picture} alt={name} width={100} height={100} />
-                <cite>{name}</cite>
-                <span>{title}</span>
+            <div className={styles.footer}>
+                <Image
+                    className={styles.picture}
+                    src={picture}
+                    alt={name}
+                    width={40}
+                    height={40}
+                />
+                <cite className={styles.name}>{name}</cite>
+                <span className={styles.title}>{title}</span>
             </div>
         </div>
     );
