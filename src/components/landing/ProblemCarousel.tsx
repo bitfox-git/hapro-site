@@ -35,7 +35,11 @@ export default function ProblemCarousel() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    <span>No</span> technical knowledge required
+                    <span className={styles.squiggle}>
+                        <span>No</span>
+                        <Image src={ProblemSquiggle} alt={"alt"} />
+                    </span>{" "}
+                    technical knowledge required
                 </h2>
                 <p className={styles.description}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
