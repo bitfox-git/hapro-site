@@ -14,7 +14,7 @@
         [center-start]
         repeat(
             calc(var(--col-count) - 2),
-            [col-start] minmax(min-content, 10rem) [col-end]
+            [col-start] minmax(0px, 10rem) [col-end]
         )
         [center-end] minmax(calc(100vw / var(--col-count)), 1fr) [full-end];
 }

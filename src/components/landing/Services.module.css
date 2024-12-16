@@ -2,3 +2,72 @@
     padding-block: 4rem;
     background: color-mix(in srgb, var(--gray-5) 30%, transparent);
 }
+
+.services {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.index {
+    font-size: var(--font-md);
+    font-weight: 600;
+    color: var(--gray-2);
+    padding: 0.5rem 1.25rem;
+    padding-bottom: 1rem;
+    background: var(--orange-9);
+    margin-bottom: -0.5rem;
+    border-radius: 12px 12px 0 0;
+}
+
+.title {
+    font-size: var(--font-md);
+    font-weight: 500;
+    color: var(--gray-12);
+}
+
+.description {
+    font-size: var(--font-base);
+    color: var(--gray-11);
+}
+
+.service {
+    margin-top: -4rem;
+    grid-column: -1/1;
+    width: 100%;
+    display: grid;
+    grid-template-columns: subgrid;
+}
+
+.content {
+    grid-column: 1/5;
+}
+
+.service.right .content {
+    grid-column: 7/11;
+}
+
+@media screen and (max-width: 1440px) {
+    .service:not(:first-child) {
+        margin-top: 4rem;
+    }
+
+    .content,
+    .service.right .content {
+        grid-column: 1/7;
+    }
+}
+
+.image img {
+    border-radius: 12px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

@@ -4,7 +4,7 @@
 
 .slide {
     aspect-ratio: 360/277; /* from figma file */
-    max-width: 30rem;
+    max-width: calc(12.5vw * 6) /* 6 columns of the 8 column grid */;
     border-radius: 12px;
     overflow: hidden;
     display: flex;
