@@ -1,12 +1,28 @@
+.centered {
+    text-align: center;
+}
+
 .title {
     font-size: var(--font-lg);
-    font-weight: 600;
+    font-weight: 500;
     color: var(--gray-12);
+
+    & span {
+        font-weight: 600;
+        font-style: italic;
+        font-family: "Lora", serif;
+    }
 }
 
 .subtitle {
     line-height: 1;
-    font-size: var(--font-md);
+    font-size: var(--font-base);
     font-weight: 400;
     color: var(--orange-9);
+
+    & span {
+        font-weight: 600;
+        font-style: italic;
+        font-family: "Lora", serif;
+    }
 }

@@ -2,6 +2,7 @@ import HeroScreenshot from "@/components/landing/HeroScreenshot";
 import LandingHero from "@/components/landing/LandingHero";
 import ProblemCarousel from "@/components/landing/ProblemCarousel";
 import Services from "@/components/landing/Services";
+import Testimonials from "@/components/landing/Testimonials";
 import { Box } from "@radix-ui/themes";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
@@ -34,6 +35,7 @@ export default function Home({ params }: HomeProps) {
             <HeroScreenshot />
             <ProblemCarousel />
             <Services />
+            <Testimonials />
         </>
     );
 }

@@ -5,8 +5,6 @@ import Service1Illustration from "../../assets/landing/service-image-remotecontr
 import Service2Illustration from "../../assets/landing/service-image-backups.svg";
 import Service3Illustration from "../../assets/landing/service-image-massmanagement.jpg";
 
-import GlowLine from "../../assets/landing/service-glow-line.svg";
-
 import styles from "./Services.module.css";
 import clsx from "clsx";
 
