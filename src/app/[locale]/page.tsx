@@ -31,9 +31,7 @@ export default function Home({ params }: HomeProps) {
         <>
             <LandingHero />
             <HeroScreenshot />
-            <Box style={{ gridColumn: "full !important" }}>
-                <ProblemCarousel />
-            </Box>
+            <ProblemCarousel />
         </>
     );
 }

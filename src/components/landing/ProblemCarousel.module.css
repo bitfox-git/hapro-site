@@ -1,3 +1,18 @@
+.section {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 4rem;
+}
+
+.section > * {
+    grid-column: center;
+}
+
+.carouselWrapper {
+    grid-column: full;
+}
+
 .slide {
     aspect-ratio: 360/277; /* from figma file */
     max-width: 30rem;

@@ -7,6 +7,7 @@ import ProblemSquiggle from "../../assets/landing/problem-squiggle.svg";
 import Image from "next/image";
 
 import styles from "./ProblemCarousel.module.css";
+import TitleSubtitle from "../type/TitleSubtitle";
 
 export default function ProblemCarousel() {
     const slides = [
@@ -67,5 +68,15 @@ export default function ProblemCarousel() {
         </div>,
     ];
 
-    return <Carousel options={{ loop: true }} slides={slides} />;
+    return (
+        <section className={styles.section}>
+            <TitleSubtitle
+                title="These problems are a thing of the past"
+                subtitle="No need to worry"
+            />
+            <div className={styles.carouselWrapper}>
+                <Carousel options={{ loop: true }} slides={slides} />
+            </div>
+        </section>
+    );
 }

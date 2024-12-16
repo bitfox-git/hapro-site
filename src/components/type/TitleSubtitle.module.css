@@ -1,0 +1,12 @@
+.title {
+    font-size: var(--font-lg);
+    font-weight: 600;
+    color: var(--gray-12);
+}
+
+.subtitle {
+    line-height: 1;
+    font-size: var(--font-md);
+    font-weight: 400;
+    color: var(--orange-9);
+}
