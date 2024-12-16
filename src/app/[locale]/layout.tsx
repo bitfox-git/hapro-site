@@ -8,6 +8,8 @@ import "@radix-ui/themes/styles.css";
 import "../globals.css";
 import Navigation from "@/components/Navigation";
 
+import styles from "./layout.module.css";
+
 import { Geologica, Lora } from "next/font/google";
 
 const geologica = Geologica({
@@ -54,8 +56,10 @@ export default async function LocaleLayout({
             <body>
                 <NextIntlClientProvider messages={messages}>
                     <Theme>
-                        <Navigation />
-                        {children}
+                        <div className={styles.container}>
+                            <Navigation />
+                            {children}
+                        </div>
                     </Theme>
                 </NextIntlClientProvider>
             </body>

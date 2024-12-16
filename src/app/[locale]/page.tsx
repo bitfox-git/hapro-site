@@ -1,4 +1,4 @@
-import Carousel from "@/components/carousel/Carousel";
+import HeroScreenshot from "@/components/landing/HeroScreenshot";
 import LandingHero from "@/components/landing/LandingHero";
 import ProblemCarousel from "@/components/landing/ProblemCarousel";
 import { Box } from "@radix-ui/themes";
@@ -30,6 +30,7 @@ export default function Home({ params }: HomeProps) {
     return (
         <>
             <LandingHero />
+            <HeroScreenshot />
             <Box style={{ gridColumn: "full !important" }}>
                 <ProblemCarousel />
             </Box>

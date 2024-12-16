@@ -19,12 +19,6 @@
         [center-end] minmax(calc(100vw / var(--col-count)), 1fr) [full-end];
 }
 
-body *[data-is-root-theme="true"] {
-    display: grid;
-    grid-template-columns: var(--grid-columns);
-    grid-auto-rows: min-content;
-}
-
 @media (min-width: 834px) {
     :root {
         --col-count: 10;
@@ -35,10 +29,6 @@ body *[data-is-root-theme="true"] {
     :root {
         --col-count: 12;
     }
-}
-
-*[data-is-root-theme="true"] > * {
-    grid-column: center;
 }
 
 /* personal preference */

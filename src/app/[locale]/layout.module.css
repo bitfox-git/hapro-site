@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-columns: var(--grid-columns);
+    grid-auto-rows: min-content;
+}
+
+.container > * {
+    grid-column: center;
+}
+
+.container > *:not(nav) {
+    margin-block: 4rem;
+}

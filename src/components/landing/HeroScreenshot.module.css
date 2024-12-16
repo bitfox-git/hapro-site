@@ -1,0 +1,35 @@
+.wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1200 / 621;
+}
+
+.desktop,
+.mobile {
+    border-radius: 20px;
+    filter: drop-shadow(
+            0px 8px 40px var(--Overlays-Black-Alpha-1, rgba(0, 0, 0, 0.05))
+        )
+        drop-shadow(
+            0px 12px 32px
+                var(--Colors-Neutral-Neutral-Alpha-3, rgba(0, 0, 51, 0.06))
+        );
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        aspect-ratio: 295 / 564;
+    }
+
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+}
