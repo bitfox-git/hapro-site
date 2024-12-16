@@ -1,3 +1,4 @@
+import FAQLanding from "@/components/landing/FAQLanding";
 import HeroScreenshot from "@/components/landing/HeroScreenshot";
 import LandingHero from "@/components/landing/LandingHero";
 import ProblemCarousel from "@/components/landing/ProblemCarousel";
@@ -36,6 +37,7 @@ export default function Home({ params }: HomeProps) {
             <ProblemCarousel />
             <Services />
             <Testimonials />
+            <FAQLanding />
         </>
     );
 }
