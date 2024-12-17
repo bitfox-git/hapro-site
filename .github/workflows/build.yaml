@@ -35,7 +35,6 @@ jobs:
                   push: true
                   target: nextjs-docker
                   tags: |
-                      ghcr.io/${{ github.repository }}:${{ needs.version_determination.outputs.version }}
                       ghcr.io/${{ github.repository }}:latest
 
             - name: Clean up images
