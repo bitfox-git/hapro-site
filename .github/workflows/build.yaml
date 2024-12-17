@@ -33,7 +33,6 @@ jobs:
                   context: .
                   file: ./Dockerfile
                   push: true
-                  target: nextjs-docker
                   tags: |
                       ghcr.io/${{ github.repository }}:latest
 
