@@ -37,7 +37,7 @@
 }
 
 .nav ul li.logo {
-    a {
+    & a {
         display: flex;
         align-items: center;
         height: 100%;

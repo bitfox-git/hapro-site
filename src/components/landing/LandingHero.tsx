@@ -7,6 +7,7 @@ import mobileIllustration from "../../assets/landing/hero-illustration-mobile.sv
 import styles from "./LandingHero.module.css";
 import { Button, Heading } from "@radix-ui/themes";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function LandingHero() {
     return (
@@ -44,10 +45,10 @@ export default function LandingHero() {
                 </div>
                 <div className={styles.buttons}>
                     <Button asChild size={"4"} color="orange" variant="solid">
-                        <a href="/partner">Join Now</a>
+                        <Link href="/partner">Join Now</Link>
                     </Button>
                     <Button asChild size={"4"} color="gray" variant="outline">
-                        <a href="#problems">Learn More</a>
+                        <Link href="#problems">Learn More</Link>
                     </Button>
                 </div>
             </div>

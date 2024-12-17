@@ -52,7 +52,7 @@
             grid-row: 1;
         }
 
-        img {
+        & img {
             position: absolute;
             width: 100%;
             height: auto;

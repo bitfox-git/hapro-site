@@ -7,6 +7,7 @@ import FooterCTALineRight from "../../assets/footer/footer-cta-line-right.svg";
 import styles from "./FooterCTA.module.css";
 import Image from "next/image";
 import { Button } from "@radix-ui/themes";
+import Link from "next/link";
 
 export default function FooterCTA() {
     return (
@@ -33,7 +34,7 @@ export default function FooterCTA() {
                     color="orange"
                     className={styles.button}
                 >
-                    <a href="/partner">Go To Partner Registration Page</a>
+                    <Link href="/partner">Go To Partner Registration Page</Link>
                 </Button>
                 <Image
                     className={clsx(

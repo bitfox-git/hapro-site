@@ -1,4 +1,4 @@
-import { Link } from "@radix-ui/themes";
+import { Link as RadixLink } from "@radix-ui/themes";
 import TitleSubtitle from "../type/TitleSubtitle";
 
 import styles from "./FAQLanding.module.css";
@@ -9,6 +9,8 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
+
+import Link from "next/link";
 
 import { promises as fs } from "fs";
 
@@ -60,9 +62,9 @@ export default async function FAQLanding() {
             <p className={styles.description}>
                 Find answers to commonly asked questions about our services,
                 features and products below, for further assistance,{" "}
-                <Link asChild>
-                    <a href="/faq">check out our complete help page.</a>
-                </Link>
+                <RadixLink asChild>
+                    <Link href="/faq">check out our complete help page.</Link>
+                </RadixLink>
             </p>
             <div className={styles.faqs}>
                 <div className={styles.column}>{parseArray(faqArrayLeft)}</div>

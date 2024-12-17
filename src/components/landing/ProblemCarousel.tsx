@@ -11,7 +11,7 @@ import TitleSubtitle from "../type/TitleSubtitle";
 
 export default function ProblemCarousel() {
     const slides = [
-        <div className={styles.slide}>
+        <div className={styles.slide} key={0}>
             <Image
                 className={styles.image}
                 src={Problem1Illustration}
@@ -28,7 +28,7 @@ export default function ProblemCarousel() {
                 </p>
             </div>
         </div>,
-        <div className={styles.slide}>
+        <div className={styles.slide} key={0}>
             <Image
                 className={styles.image}
                 src={Problem2Illustration}
@@ -49,7 +49,7 @@ export default function ProblemCarousel() {
                 </p>
             </div>
         </div>,
-        <div className={styles.slide}>
+        <div className={styles.slide} key={0}>
             <Image
                 className={styles.image}
                 src={Problem3Illustration}
