@@ -15,20 +15,26 @@ import Link from "next/link";
 import { promises as fs } from "fs";
 import { unstable_cache } from "next/cache";
 
-const getFaqs = unstable_cache(async () => {
-    // if the nextJS docs are correct, this is only loaded once during build time
-    const faqsFile = await fs.readFile(
-        process.cwd() + "/src/data/faqs.md",
-        "utf-8"
-    );
+const getFaqs = unstable_cache(
+    async () => {
+        const faqsFile = await fs.readFile(
+            process.cwd() + "/src/data/faqs.md",
+            "utf-8"
+        );
 
-    return await unified()
-        .use(remarkParse)
-        .use(remarkRehype)
-        .use(rehypeSanitize)
-        .use(rehypeStringify)
-        .process(faqsFile);
-});
+        return unified()
+            .use(remarkParse)
+            .use(remarkRehype)
+            .use(rehypeSanitize)
+            .use(rehypeStringify)
+            .process(faqsFile)
+            .toString();
+    },
+    ["faqs-md"],
+    {
+        revalidate: false,
+    }
+);
 
 export default async function FAQLanding() {
     const faqsHtml = await getFaqs();
