@@ -26,3 +26,35 @@
         font-family: "Lora", serif;
     }
 }
+
+.large .title {
+    font-size: var(--font-xxxl);
+}
+
+.large .subtitle {
+    font-size: var(--font-lg);
+}
+
+@media screen and (max-width: 1440px) {
+    .large .title {
+        font-size: var(--font-xl);
+    }
+
+    .large .subtitle {
+        font-size: var(--font-md);
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .large .title {
+        font-size: var(--font-lg);
+    }
+
+    .large .subtitle {
+        font-size: var(--font-base);
+    }
+}
+
+.dark .title {
+    color: var(--gray-1);
+}

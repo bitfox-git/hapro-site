@@ -1,0 +1,26 @@
+<svg width="593" height="59" viewBox="0 0 593 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+        id="path"
+        d="M593 1L465.392 1L251.332 1C243.048 1 236.332 7.71573 236.332 16V43C236.332 51.2843 229.616 58 221.332 58L-4.17233e-07 58"
+    />
+
+    <mask id="lineMask">
+        <use href="#path" stroke="white" stroke-width="2" />
+    </mask>
+    <g mask="url(#lineMask)">
+        <use href="#path" stroke="#493D39" stroke-width="2" />
+
+        <circle r="50" fill="#FF8052" filter="url(#blur_filter)">
+            <animateMotion dur="5s" repeatCount="indefinite">
+                <mpath href="#path" />
+            </animateMotion>
+            <animate attributeName="r" values="10;50;10" dur="5s" repeatCount="indefinite" />
+        </circle>
+    </g>
+
+    <defs>
+        <filter id="blur_filter" x="0" y="0">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="15" />
+        </filter>
+    </defs>
+</svg>

@@ -26,7 +26,8 @@ export default async function FAQLanding() {
         .use(rehypeStringify)
         .process(faqsFile);
 
-    const faqArray = faqsHtml.toString().split("<h1>");
+    // take the first 10
+    const faqArray = faqsHtml.toString().split("<h1>").slice(1, 11);
 
     // get exactly half of the faqs, we will divide the faqs over two columns, grid doesn't work here since the faqs grow
     // which would make the entire row grow, we want to keep the faqs in the same row, masonry style.
@@ -34,10 +35,8 @@ export default async function FAQLanding() {
     const faqArrayLeft = half > 1 ? faqArray.slice(0, half) : faqArray;
     const faqArrayRight = half > 1 ? faqArray.slice(half) : [];
 
-    const parseArray = (array: string[], first?: boolean) => {
+    const parseArray = (array: string[]) => {
         return array.map((faq, index) => {
-            if (index === 0 && first) return null;
-
             const [question, answer] = faq.split("</h1>");
 
             return (
@@ -66,9 +65,7 @@ export default async function FAQLanding() {
                 </Link>
             </p>
             <div className={styles.faqs}>
-                <div className={styles.column}>
-                    {parseArray(faqArrayLeft, true)}
-                </div>
+                <div className={styles.column}>{parseArray(faqArrayLeft)}</div>
                 <div className={styles.column}>{parseArray(faqArrayRight)}</div>
             </div>
         </section>

@@ -1,3 +1,4 @@
+import FooterCTA from "@/components/footer/FooterCTA";
 import FAQLanding from "@/components/landing/FAQLanding";
 import HeroScreenshot from "@/components/landing/HeroScreenshot";
 import LandingHero from "@/components/landing/LandingHero";
@@ -38,6 +39,7 @@ export default function Home({ params }: HomeProps) {
             <Services />
             <Testimonials />
             <FAQLanding />
+            <FooterCTA />
         </>
     );
 }
