@@ -1,0 +1,13 @@
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - run: |
+                  docker build -t nextjs-docker .
+                  docker run -p 3000:3000 nextjs-docker
