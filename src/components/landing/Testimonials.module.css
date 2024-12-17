@@ -8,7 +8,7 @@
     border-radius: 10px;
     background-color: color-mix(in lab, var(--gray-5) 30%, transparent);
 
-    min-width: 350px;
+    max-width: calc(12.5vw * 6) /* 6 columns of the 8 column grid */;
 }
 
 .testimonial blockquote {
