@@ -8,6 +8,10 @@
     grid-column: center;
 }
 
-.container > *:not(nav) {
+.container > *:not(nav):not(:last-child) {
     margin-block: 4rem;
+}
+
+.container > *:last-child {
+    margin-top: 4rem;
 }
