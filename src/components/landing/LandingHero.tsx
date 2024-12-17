@@ -43,11 +43,11 @@ export default function LandingHero() {
                     </Heading>
                 </div>
                 <div className={styles.buttons}>
-                    <Button size={"4"} color="orange" variant="solid">
-                        Join Now
+                    <Button asChild size={"4"} color="orange" variant="solid">
+                        <a href="/partner">Join Now</a>
                     </Button>
-                    <Button size={"4"} color="gray" variant="outline">
-                        Learn More
+                    <Button asChild size={"4"} color="gray" variant="outline">
+                        <a href="#problems">Learn More</a>
                     </Button>
                 </div>
             </div>

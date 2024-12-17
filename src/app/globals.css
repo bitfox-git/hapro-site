@@ -8,6 +8,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    scroll-behavior: smooth;
+}
+
 :root {
     --col-count: 8;
     --grid-columns: [full-start] minmax(calc(100vw / var(--col-count)), 1fr)
