@@ -18,7 +18,7 @@ import { unstable_cache } from "next/cache";
 const getFaqs = unstable_cache(
     async () => {
         const faqsFile = await fs.readFile(
-            process.cwd() + "/src/data/faqs.md",
+            process.cwd() + "/public/content/faqs.md",
             "utf-8"
         );
 
@@ -27,8 +27,7 @@ const getFaqs = unstable_cache(
             .use(remarkRehype)
             .use(rehypeSanitize)
             .use(rehypeStringify)
-            .process(faqsFile)
-            .toString();
+            .process(faqsFile);
     },
     ["faqs-md"],
     {
