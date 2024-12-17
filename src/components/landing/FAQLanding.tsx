@@ -13,20 +13,25 @@ import { unified } from "unified";
 import Link from "next/link";
 
 import { promises as fs } from "fs";
+import { unstable_cache } from "next/cache";
 
-export default async function FAQLanding() {
+const getFaqs = unstable_cache(async () => {
     // if the nextJS docs are correct, this is only loaded once during build time
     const faqsFile = await fs.readFile(
         process.cwd() + "/src/data/faqs.md",
         "utf-8"
     );
 
-    const faqsHtml = await unified()
+    return await unified()
         .use(remarkParse)
         .use(remarkRehype)
         .use(rehypeSanitize)
         .use(rehypeStringify)
         .process(faqsFile);
+});
+
+export default async function FAQLanding() {
+    const faqsHtml = await getFaqs();
 
     // take the first 10
     const faqArray = faqsHtml.toString().split("<h1>").slice(1, 11);

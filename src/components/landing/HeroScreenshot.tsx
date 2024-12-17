@@ -10,16 +10,14 @@ export default function HeroScreenshot() {
             <Image
                 src={HeroScreenshotDesktop}
                 alt="Hero screenshot"
-                layout="fill"
-                objectFit="contain"
+                fill
                 quality={100}
                 className={styles.desktop}
             />
             <Image
                 src={HeroScreenshotMobile}
                 alt="Hero screenshot"
-                layout="fill"
-                objectFit="contain"
+                fill
                 quality={100}
                 className={styles.mobile}
             />
