@@ -2,8 +2,27 @@
     /* nullify spacing with title above */
     margin-top: -2rem;
 
-    font-size: var(--font-base);
+    font-size: var(--font-md);
     max-width: 50ch;
     text-wrap: balance;
     color: color-mix(in lab, var(--gray-12) 70%, transparent);
+}
+
+.faqs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1440px) {
+    .faqs {
+        grid-template-columns: 1fr;
+    }
+}
+
+.faqs .column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }

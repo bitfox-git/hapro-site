@@ -12,7 +12,7 @@
 }
 
 .testimonial blockquote {
-    font-size: var(--font-base);
+    font-size: var(--font-md);
 }
 
 .testimonial blockquote::before {
