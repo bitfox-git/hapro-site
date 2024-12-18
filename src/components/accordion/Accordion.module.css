@@ -65,8 +65,16 @@
     transition: height 0.2s ease-out, padding 0.2s ease-out;
 }
 
+.content > * > * > *:not(:first-child) {
+    margin-top: 2rem;
+}
+
 .content a {
     color: var(--orange-9);
+}
+
+.content img {
+    border-radius: 6px;
 }
 
 .wrapper.open .content {

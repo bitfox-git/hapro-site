@@ -1,0 +1,11 @@
+.faqs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 20vh;
+}
+
+.noResults {
+    font-size: var(--font-base);
+    text-align: center;
+}
