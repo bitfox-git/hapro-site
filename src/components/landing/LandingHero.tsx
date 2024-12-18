@@ -7,7 +7,7 @@ import mobileIllustration from "../../assets/landing/hero-illustration-mobile.sv
 import styles from "./LandingHero.module.css";
 import { Button, Heading } from "@radix-ui/themes";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export default function LandingHero() {
     return (

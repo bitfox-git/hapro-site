@@ -7,7 +7,7 @@ import FooterCTALineRight from "../../assets/footer/footer-cta-line-right.svg";
 import styles from "./FooterCTA.module.css";
 import Image from "next/image";
 import { Button } from "@radix-ui/themes";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 export default function FooterCTA() {
     return (

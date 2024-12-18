@@ -10,7 +10,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 
 import { promises as fs } from "fs";
 import { unstable_cache } from "next/cache";
