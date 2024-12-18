@@ -1,3 +1,4 @@
+import ComparisonTable from "./components/ComparisonTable";
 import PartnerFeatures from "./components/PartnerFeatures";
 import PartnerHero from "./components/PartnerHero";
 
@@ -6,6 +7,7 @@ export default function PartnerPage() {
         <>
             <PartnerHero />
             <PartnerFeatures />
+            <ComparisonTable />
         </>
     );
 }
