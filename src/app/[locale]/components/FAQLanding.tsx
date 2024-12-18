@@ -1,45 +1,23 @@
 import { Link as RadixLink } from "@radix-ui/themes";
-import TitleSubtitle from "../type/TitleSubtitle";
+import TitleSubtitle from "../../../components/type/TitleSubtitle";
 
 import styles from "./FAQLanding.module.css";
-import Accordion from "../accordion/Accordion";
+import Accordion from "../../../components/accordion/Accordion";
 
-import rehypeSanitize from "rehype-sanitize";
-import rehypeStringify from "rehype-stringify";
-import remarkParse from "remark-parse";
-import remarkRehype from "remark-rehype";
-import { unified } from "unified";
-
-import Link from "next/link";
-
-import { promises as fs } from "fs";
-import { unstable_cache } from "next/cache";
-
-const getFaqs = unstable_cache(
-    async () => {
-        const faqsFile = await fs.readFile(
-            process.cwd() + "/public/content/faqs.md",
-            "utf-8"
-        );
-
-        return unified()
-            .use(remarkParse)
-            .use(remarkRehype)
-            .use(rehypeSanitize)
-            .use(rehypeStringify)
-            .process(faqsFile);
-    },
-    ["faqs-md"],
-    {
-        revalidate: false,
-    }
-);
+import { Link } from "@/i18n/routing";
+import { getFaqs } from "@/lib/actions";
 
 export default async function FAQLanding() {
-    const faqsHtml = await getFaqs();
+    const { faqs } = await getFaqs();
+
+    // flatten the faqs into a single string
+    const faqsHtml = faqs
+        .map((faq) => faq.faqs)
+        .flat()
+        .join("");
 
     // take the first 10
-    const faqArray = faqsHtml.toString().split("<h1>").slice(1, 11);
+    const faqArray = faqsHtml.split("<h1>").slice(1, 11);
 
     // get exactly half of the faqs, we will divide the faqs over two columns, grid doesn't work here since the faqs grow
     // which would make the entire row grow, we want to keep the faqs in the same row, masonry style.

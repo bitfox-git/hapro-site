@@ -1,0 +1,48 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: subgrid;
+    row-gap: 4rem;
+    padding-bottom: 4rem;
+}
+
+@media screen and (max-width: 834px) {
+    .container {
+        row-gap: 2rem;
+    }
+}
+
+.container > * {
+    grid-column: center;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: subgrid;
+    background: linear-gradient(
+        135deg,
+        rgba(224, 224, 224, 0.3) 0%,
+        rgba(224, 224, 224, 0.3) 80%,
+        #ff8052a0 100%
+    );
+    padding-block: 8rem;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 834px) {
+    .hero {
+        padding-block: 2rem;
+    }
+}
+
+.heroContent {
+    grid-column: 2/-2;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.searchBox {
+    max-width: 500px;
+    line-height: 1;
+}

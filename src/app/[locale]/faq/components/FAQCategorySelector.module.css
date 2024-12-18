@@ -1,0 +1,40 @@
+.selector {
+    --segmented-control-indicator-background-color: var(--gray-5);
+    --padding: 2.5rem;
+    padding: var(--padding) 0;
+}
+
+.dropdown {
+    display: none;
+}
+
+.dropdown button {
+    width: 100%;
+}
+
+.dropdown .label {
+    font-size: var(--font-base);
+    font-weight: 500;
+    color: var(--gray-10);
+}
+
+.item {
+    position: relative;
+    margin: calc(-1 * var(--padding)) 0;
+
+    & span {
+        font-size: var(--font-base);
+    }
+}
+
+@media screen and (max-width: 834px) {
+    .selector {
+        display: none;
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
