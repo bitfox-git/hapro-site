@@ -11,6 +11,7 @@ import Navigation from "@/components/navigation/Navigation";
 import styles from "./layout.module.css";
 
 import { Geologica, Lora } from "next/font/google";
+import { Metadata } from "next";
 
 const geologica = Geologica({
     subsets: ["latin"],
@@ -22,6 +23,13 @@ const lora = Lora({
     style: ["normal", "italic"],
     weight: ["400", "500", "600", "700"],
 });
+
+export const metadata: Metadata = {
+    robots:
+        process.env.NODE_ENV === "development"
+            ? "noindex, nofollow"
+            : "index, follow",
+};
 
 export function generateStaticParams() {
     return routing.locales.map((locale) => ({ locale }));
