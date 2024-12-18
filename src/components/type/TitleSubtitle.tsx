@@ -1,13 +1,14 @@
 import clsx from "clsx";
 import styles from "./TitleSubtitle.module.css";
-import { ReactNode } from "react";
+import { createElement, ReactNode } from "react";
 
 type TitleSubtitleProps = Readonly<{
     title: ReactNode;
-    subtitle: ReactNode;
+    subtitle?: ReactNode;
     centered?: boolean;
     large?: boolean;
     dark?: boolean;
+    as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 }>;
 
 export default function TitleSubtitle({
@@ -16,6 +17,7 @@ export default function TitleSubtitle({
     centered,
     large,
     dark,
+    as,
 }: TitleSubtitleProps) {
     return (
         <div
@@ -25,8 +27,8 @@ export default function TitleSubtitle({
                 dark && styles.dark
             )}
         >
-            <h3 className={styles.subtitle}>{subtitle}</h3>
-            <h2 className={styles.title}>{title}</h2>
+            {subtitle && <h3 className={styles.subtitle}>{subtitle}</h3>}
+            {createElement(as || "h2", { className: styles.title }, title)}
         </div>
     );
 }

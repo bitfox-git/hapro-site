@@ -1,0 +1,66 @@
+.container {
+    display: grid;
+    grid-column: full;
+    grid-template-columns: subgrid;
+    align-items: center;
+    gap: 2rem;
+}
+
+.container > * {
+    grid-column: center;
+}
+
+.scribbledText {
+    display: inline-grid;
+    grid-template-areas: "stack";
+    width: min-content;
+}
+
+.scribbledText > * {
+    grid-area: stack;
+}
+
+.scribbledText img {
+    width: 75%;
+    height: auto;
+    translate: 0 300%;
+}
+
+.subtitle {
+    font-size: var(--font-base);
+    color: var(--gray-10);
+    font-weight: 300;
+    text-align: center;
+}
+
+.logos {
+    overflow: hidden;
+    grid-column: full;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(7, max-content);
+    justify-content: center;
+    gap: 3vmax;
+}
+
+.logos img {
+    height: min(3vmax, 3.5rem);
+    width: auto;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.logos img:nth-child(1),
+img:nth-child(7) {
+    margin-top: 3vmax;
+}
+
+.logos img:nth-child(2),
+img:nth-child(6) {
+    margin-top: 2vmax;
+}
+
+.logos img:nth-child(3),
+img:nth-child(5) {
+    margin-top: 1vmax;
+}

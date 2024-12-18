@@ -5,6 +5,7 @@ import FooterGlowLine from "../../assets/footer/footer-glow-line.svg";
 
 import styles from "./Footer.module.css";
 import clsx from "clsx";
+import { Link } from "@/i18n/routing";
 
 type FooterLink = {
     title: string;
@@ -62,7 +63,9 @@ export default function Footer({ children }: { children?: React.ReactNode }) {
                             <ul>
                                 {category.links.map((link) => (
                                     <li key={link.title}>
-                                        <a href={link.url}>{link.title}</a>
+                                        <Link href={link.url}>
+                                            {link.title}
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
