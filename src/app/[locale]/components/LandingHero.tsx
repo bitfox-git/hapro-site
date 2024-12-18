@@ -1,8 +1,8 @@
 "use client";
 
-import desktopIllustration from "../../assets/landing/hero-illustration-desktop.svg";
-import tabletIllustration from "../../assets/landing/hero-illustration-tablet.svg";
-import mobileIllustration from "../../assets/landing/hero-illustration-mobile.svg";
+import desktopIllustration from "@/assets/landing/hero-illustration-desktop.svg";
+import tabletIllustration from "@/assets/landing/hero-illustration-tablet.svg";
+import mobileIllustration from "@/assets/landing/hero-illustration-mobile.svg";
 
 import styles from "./LandingHero.module.css";
 import { Button, Heading } from "@radix-ui/themes";

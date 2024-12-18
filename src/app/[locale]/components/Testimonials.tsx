@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import Marquee from "../../../components/marquee/Marquee";
 import TitleSubtitle from "../../../components/type/TitleSubtitle";
 
-import PlaceholderAvatar from "../../assets/landing/placeholder-avatar.jpg";
+import PlaceholderAvatar from "@/assets/landing/placeholder-avatar.jpg";
 
 import styles from "./Testimonials.module.css";
 

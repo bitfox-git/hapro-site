@@ -1,9 +1,9 @@
 import Carousel from "../../../components/carousel/Carousel";
 
-import Problem1Illustration from "../../assets/landing/problem-illustration-devices.svg";
-import Problem2Illustration from "../../assets/landing/problem-illustration-technical.svg";
-import Problem3Illustration from "../../assets/landing/problem-illustration-networks.svg";
-import ProblemSquiggle from "../../assets/landing/problem-squiggle.svg";
+import Problem1Illustration from "@/assets/landing/problem-illustration-devices.svg";
+import Problem2Illustration from "@/assets/landing/problem-illustration-technical.svg";
+import Problem3Illustration from "@/assets/landing/problem-illustration-networks.svg";
+import ProblemSquiggle from "@/assets/landing/problem-squiggle.svg";
 import Image from "next/image";
 
 import styles from "./ProblemCarousel.module.css";

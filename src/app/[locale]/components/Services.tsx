@@ -1,9 +1,9 @@
 import TitleSubtitle from "../../../components/type/TitleSubtitle";
 import Image, { StaticImageData } from "next/image";
 
-import Service1Illustration from "../../assets/landing/service-image-remotecontrol.jpg";
-import Service2Illustration from "../../assets/landing/service-image-backups.svg";
-import Service3Illustration from "../../assets/landing/service-image-massmanagement.jpg";
+import Service1Illustration from "@/assets/landing/service-image-remotecontrol.jpg";
+import Service2Illustration from "@/assets/landing/service-image-backups.svg";
+import Service3Illustration from "@/assets/landing/service-image-massmanagement.jpg";
 
 import styles from "./Services.module.css";
 import clsx from "clsx";
