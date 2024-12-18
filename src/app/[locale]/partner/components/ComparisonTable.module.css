@@ -52,11 +52,13 @@
     background: color-mix(in lab, var(--gray-5) 30%, transparent);
 }
 
-@media screen and (max-width: 834px) {
+@media screen and (max-width: 1440px) {
     .table {
         grid-column: full;
     }
+}
 
+@media screen and (max-width: 834px) {
     .table tbody td:not(.title) {
         width: calc(50% / var(--item-count));
         padding: 0;
