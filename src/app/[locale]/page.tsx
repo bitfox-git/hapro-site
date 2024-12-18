@@ -1,11 +1,11 @@
 import Footer from "@/components/footer/Footer";
 import FooterCTA from "@/components/footer/FooterCTA";
-import FAQLanding from "@/components/landing/FAQLanding";
-import HeroScreenshot from "@/components/landing/HeroScreenshot";
-import LandingHero from "@/components/landing/LandingHero";
-import ProblemCarousel from "@/components/landing/ProblemCarousel";
-import Services from "@/components/landing/Services";
-import Testimonials from "@/components/landing/Testimonials";
+import FAQLanding from "@/app/[locale]/components/FAQLanding";
+import HeroScreenshot from "@/app/[locale]/components/HeroScreenshot";
+import LandingHero from "@/app/[locale]/components/LandingHero";
+import ProblemCarousel from "@/app/[locale]/components/ProblemCarousel";
+import Services from "@/app/[locale]/components/Services";
+import Testimonials from "@/app/[locale]/components/Testimonials";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
 

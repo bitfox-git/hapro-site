@@ -1,8 +1,8 @@
 import { Link as RadixLink } from "@radix-ui/themes";
-import TitleSubtitle from "../type/TitleSubtitle";
+import TitleSubtitle from "../../../components/type/TitleSubtitle";
 
 import styles from "./FAQLanding.module.css";
-import Accordion from "../accordion/Accordion";
+import Accordion from "../../../components/accordion/Accordion";
 
 import rehypeSanitize from "rehype-sanitize";
 import rehypeStringify from "rehype-stringify";
