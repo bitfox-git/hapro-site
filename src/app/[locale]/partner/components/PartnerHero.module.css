@@ -4,6 +4,7 @@
     grid-template-columns: subgrid;
     align-items: center;
     gap: 2rem;
+    padding-block: 10vh;
 }
 
 .container > * {
@@ -24,6 +25,7 @@
     width: 75%;
     height: auto;
     translate: 0 300%;
+    user-select: none;
 }
 
 .subtitle {
