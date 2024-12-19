@@ -23,6 +23,26 @@ export async function generateMetadata({ params }: HomeProps) {
 
     return {
         title: t("title"),
+        description: t("description"),
+        openGraph: {
+            title: t("title"),
+            description: t("description"),
+            type: "website",
+            images: [
+                {
+                    url: "/opengraph.png",
+                    width: 1200,
+                    height: 630,
+                    alt: t("ogImageAlt"),
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: t("title"),
+            description: t("description"),
+            image: "/opengraph.png",
+        },
     };
 }
 
