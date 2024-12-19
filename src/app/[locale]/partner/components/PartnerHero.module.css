@@ -53,16 +53,16 @@
 }
 
 .logos img:nth-child(1),
-img:nth-child(7) {
+.logos img:nth-child(7) {
     margin-top: 3vmax;
 }
 
 .logos img:nth-child(2),
-img:nth-child(6) {
+.logos img:nth-child(6) {
     margin-top: 2vmax;
 }
 
 .logos img:nth-child(3),
-img:nth-child(5) {
+.logos img:nth-child(5) {
     margin-top: 1vmax;
 }
