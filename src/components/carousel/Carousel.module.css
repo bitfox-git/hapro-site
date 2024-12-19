@@ -1,10 +1,18 @@
 .embla {
-    display: none;
+    --slide-spacing: 1rem;
+    --slide-size: min(32rem, calc(100% - 2rem));
+
     margin: auto;
     width: 100%;
     overflow: hidden;
-    --slide-spacing: 1rem;
-    --slide-size: min(32rem, calc(100% - 2rem));
+}
+
+.embla.forceCarousel {
+    --slide-size: 100%;
+}
+
+.embla:not(.forceCarousel) {
+    display: none;
 }
 .embla__viewport {
     overflow: hidden;

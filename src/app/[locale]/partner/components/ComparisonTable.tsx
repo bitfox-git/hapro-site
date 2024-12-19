@@ -76,7 +76,9 @@ export default function ComparisonTable() {
                     ))}
                 </tbody>
             </table>
-            <p>* Naby Casa assigns your device a random subdomain</p>
+            <p className={styles.note}>
+                * Nabu Casa assigns your device a random subdomain
+            </p>
         </div>
     );
 }

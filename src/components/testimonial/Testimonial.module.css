@@ -12,8 +12,17 @@
     max-width: calc(12.5vw * 6) /* 6 columns of the 8 column grid */;
 }
 
+.testimonial.dark {
+    background: var(--gray-12);
+}
+
 .testimonial blockquote {
-    font-size: var(--font-md);
+    font-size: var(--font-base);
+    font-weight: 300;
+}
+
+.testimonial.dark blockquote {
+    color: var(--gray-7);
 }
 
 .testimonial blockquote::before {
@@ -35,6 +44,10 @@
     align-items: center;
 }
 
+.testimonial.dark .footer {
+    color: var(--gray-5);
+}
+
 .testimonial .footer .picture {
     grid-area: avatar;
 }
@@ -47,4 +60,5 @@
 .testimonial .footer .title {
     grid-area: title;
     font-size: var(--font-sm);
+    opacity: 0.4;
 }

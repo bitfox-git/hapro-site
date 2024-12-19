@@ -52,6 +52,12 @@
     background: color-mix(in lab, var(--gray-5) 30%, transparent);
 }
 
+.note {
+    margin-top: -2rem;
+    font-size: var(--font-small);
+    color: var(--gray-10);
+}
+
 @media screen and (max-width: 1440px) {
     .table {
         grid-column: full;

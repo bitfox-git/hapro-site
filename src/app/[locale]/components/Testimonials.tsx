@@ -1,10 +1,8 @@
-import Image, { StaticImageData } from "next/image";
 import Marquee from "../../../components/marquee/Marquee";
 import TitleSubtitle from "../../../components/type/TitleSubtitle";
 
 import PlaceholderAvatar from "@/assets/landing/placeholder-avatar.jpg";
-
-import styles from "./Testimonials.module.css";
+import Testimonial from "@/components/testimonial/Testimonial";
 
 export default function Testimonials() {
     return (
@@ -71,31 +69,5 @@ export default function Testimonials() {
                 />
             </Marquee>
         </section>
-    );
-}
-
-type TestimonialProps = Readonly<{
-    quote: string;
-    picture: StaticImageData;
-    name: string;
-    title: string;
-}>;
-
-function Testimonial({ quote, picture, name, title }: TestimonialProps) {
-    return (
-        <div className={styles.testimonial}>
-            <blockquote>{quote}</blockquote>
-            <div className={styles.footer}>
-                <Image
-                    className={styles.picture}
-                    src={picture}
-                    alt={name}
-                    width={40}
-                    height={40}
-                />
-                <cite className={styles.name}>{name}</cite>
-                <span className={styles.title}>{title}</span>
-            </div>
-        </div>
     );
 }
