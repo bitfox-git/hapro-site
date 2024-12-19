@@ -17,6 +17,7 @@ export type SignupInputs = {
 
 export default function SignupForm() {
     const [submitting, setSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
 
     const {
         register,
@@ -29,7 +30,7 @@ export default function SignupForm() {
         if (submitting) return;
 
         setSubmitting(true);
-        await fetch("/api/email", {
+        const res = await fetch("/api/email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -37,12 +38,18 @@ export default function SignupForm() {
             body: JSON.stringify(data),
         });
 
+        if (res.ok) {
+            setSubmitted(true);
+        } else {
+            alert("An error occurred. Please try again.");
+        }
+
         reset();
         setSubmitting(false);
     };
 
     return (
-        <div className={styles.container}>
+        <div className={clsx(styles.container, submitted && styles.submitted)}>
             <div className={styles.text}>
                 <h2>Get Started</h2>
                 <p>Register as a partner below.</p>
@@ -104,6 +111,13 @@ export default function SignupForm() {
                     Sign up now
                 </Button>
             </form>
+            <div className={styles.success}>
+                <h2>Registration Sent</h2>
+                <p>
+                    Thank you for registering as a partner. We will get back to
+                    you shortly. You may close this window.
+                </p>
+            </div>
         </div>
     );
 }

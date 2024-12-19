@@ -5,7 +5,8 @@
     justify-content: center;
 }
 
-.text h2 {
+.text h2,
+.success h2 {
     font-size: var(--font-lg);
     color: var(--gray-2);
     font-weight: 500;
@@ -13,7 +14,8 @@
     text-wrap: balance;
 }
 
-.text p {
+.text p,
+.success p {
     font-size: var(--font-md);
     color: color-mix(in lab, var(--gray-5) 70%, transparent);
     font-weight: 300;
@@ -52,4 +54,22 @@
 .form button {
     width: fit-content;
     padding: 1rem 2rem;
+}
+
+.submitted .form {
+    display: none;
+}
+
+.submitted .text {
+    display: none;
+}
+
+.success {
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.submitted .success {
+    display: flex;
 }
