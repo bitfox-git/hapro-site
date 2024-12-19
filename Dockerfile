@@ -40,6 +40,14 @@ RUN \
 FROM base AS runner
 WORKDIR /app
 
+# Pass build arguments
+ARG POSTMARK_SERVER_TOKEN
+ARG POSTMARK_RECEIVER_EMAIL
+
+# create .env file
+RUN echo "POSTMARK_SERVER_TOKEN=$POSTMARK_SERVER_TOKEN" > .env
+RUN echo "POSTMARK_RECEIVER_EMAIL=$POSTMARK_RECEIVER_EMAIL" >> .env
+
 ENV NODE_ENV=production
 # Uncomment the following line in case you want to disable telemetry during runtime.
 # ENV NEXT_TELEMETRY_DISABLED=1

@@ -35,6 +35,9 @@ jobs:
                   push: true
                   tags: |
                       ghcr.io/${{ github.repository }}:latest
+                  build-args: |
+                      POSTMARK_SERVER_TOKEN=${{ secrets.POSTMARK_SERVER_TOKEN }}
+                      POSTMARK_RECEIVER_EMAIL=${{ secrets.POSTMARK_RECEIVER_EMAIL }}
 
             - name: Clean up images
               run: docker system prune -f
