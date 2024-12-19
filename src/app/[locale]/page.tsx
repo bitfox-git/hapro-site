@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: HomeProps) {
             type: "website",
             images: [
                 {
-                    url: "/opengraph.png",
+                    url: "https://hapro.cloud/opengraph.png",
                     width: 1200,
                     height: 630,
                     alt: t("ogImageAlt"),
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: HomeProps) {
             card: "summary_large_image",
             title: t("title"),
             description: t("description"),
-            image: "/opengraph.png",
+            image: "https://hapro.cloud/opengraph.png",
         },
     };
 }
