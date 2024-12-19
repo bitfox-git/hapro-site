@@ -8,16 +8,21 @@ import styles from "./FooterCTA.module.css";
 import Image from "next/image";
 import { Button } from "@radix-ui/themes";
 import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
-export default function FooterCTA() {
+export default async function FooterCTA() {
+    const t = await getTranslations("footer_cta");
+
     return (
         <section className={clsx("section", styles.container)}>
             <TitleSubtitle
                 centered
                 large
                 dark
-                title="Become a partner today"
-                subtitle="Ready to take the leap?"
+                // title="Become a partner today"
+                title={t("title")}
+                // subtitle="Ready to take the leap?"
+                subtitle={t("subtitle")}
             />
             <div className={styles.cta}>
                 <Image
@@ -34,7 +39,10 @@ export default function FooterCTA() {
                     color="orange"
                     className={styles.button}
                 >
-                    <Link href="/partner">Go To Partner Registration Page</Link>
+                    <Link href="/partner">
+                        {/* Go To Partner Registration Page */}
+                        {t("cta")}
+                    </Link>
                 </Button>
                 <Image
                     className={clsx(

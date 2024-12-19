@@ -12,28 +12,30 @@ import Logo7 from "@/assets/partner/logo-7.svg";
 
 import styles from "./PartnerHero.module.css";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 
-export default function PartnerHero() {
+export default async function PartnerHero() {
+    const t = await getTranslations("partner.hero");
+
     return (
         <div className={styles.container}>
             <TitleSubtitle
-                title={
-                    <>
-                        Register as a partner{" "}
+                title={t.rich("title", {
+                    scribble: (children) => (
                         <span className={styles.scribbledText}>
-                            <span>today</span>
+                            <span>{children}</span>
                             <Image
                                 src={Scribble}
                                 alt="decorative scribble under text"
                             />
                         </span>
-                    </>
-                }
+                    ),
+                })}
                 centered
                 large
                 as="h1"
             />
-            <h2 className={styles.subtitle}>And join these companies</h2>
+            <h2 className={styles.subtitle}>{t("subtitle")}</h2>
             <div className={styles.logos}>
                 <Image src={Logo1} alt="Logo 1" />
                 <Image src={Logo2} alt="Logo 2" />

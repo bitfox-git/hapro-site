@@ -1,71 +1,73 @@
+import { getTranslations } from "next-intl/server";
 import Marquee from "../../../components/marquee/Marquee";
 import TitleSubtitle from "../../../components/type/TitleSubtitle";
 
 import PlaceholderAvatar from "@/assets/landing/placeholder-avatar.jpg";
 import Testimonial from "@/components/testimonial/Testimonial";
 
-export default function Testimonials() {
+export default async function Testimonials() {
+    const tLanding = await getTranslations("landing.testimonials");
+    const tTestimonials = await getTranslations("testimonials");
+
     return (
         <section className="section">
             <TitleSubtitle
                 centered
-                title={
-                    <>
-                        Take <span>their</span> word for it
-                    </>
-                }
-                subtitle="Don't take our word for it"
+                title={tLanding.rich("title", {
+                    italic: (children) => <span>{children}</span>,
+                })}
+                subtitle={tLanding("subtitle")}
             />
             <Marquee direction="left" duration={60}>
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
             </Marquee>
             <Marquee direction="right" duration={60}>
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
                 <Testimonial
-                    quote="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    quote={tTestimonials("testimonial1.quote")}
                     picture={PlaceholderAvatar}
-                    name="Jane Doe"
-                    title="CEO & Founder of Acme Inc."
+                    name={tTestimonials("testimonial1.name")}
+                    title={tTestimonials("testimonial1.title")}
                 />
             </Marquee>
         </section>

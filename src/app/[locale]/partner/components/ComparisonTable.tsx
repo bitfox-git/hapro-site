@@ -4,6 +4,7 @@ import Cross from "@/assets/partner/cross.svg";
 import styles from "./ComparisonTable.module.css";
 import Image from "next/image";
 import TitleSubtitle from "@/components/type/TitleSubtitle";
+import { getTranslations } from "next-intl/server";
 
 const comparingApps = ["Nabu Casa", "Homeway.io", "hapro"];
 
@@ -12,40 +13,46 @@ type Comparison = {
     hasFeature: boolean[]; // boolean per comparing app
 };
 
-const comparisons: Comparison[] = [
-    {
-        title: "Offers support for multiple devices in a single dashboard",
-        hasFeature: [false, false, true],
-    },
-    {
-        title: "Aimed towards a professional user group",
-        hasFeature: [false, false, true],
-    },
-    {
-        title: "Backup management on the cloud",
-        hasFeature: [false, false, true],
-    },
-    {
-        title: "Connect with voice-assistants like Google Home and Alexa",
-        hasFeature: [true, true, false],
-    },
-    {
-        title: "Custom subdomains on a per-device basis",
-        hasFeature: [false, false, true],
-    },
-];
+export default async function ComparisonTable() {
+    const t = await getTranslations("partner.comparison");
 
-export default function ComparisonTable() {
+    const comparisons: Comparison[] = [
+        {
+            // title: "Offers support for multiple devices in a single dashboard",
+            title: t("comparison1.title"),
+            hasFeature: [false, false, true],
+        },
+        {
+            // title: "Aimed towards a professional user group",
+            title: t("comparison2.title"),
+            hasFeature: [false, false, true],
+        },
+        {
+            // title: "Backup management on the cloud",
+            title: t("comparison3.title"),
+            hasFeature: [false, false, true],
+        },
+        {
+            // title: "Connect with voice-assistants like Google Home and Alexa",
+            title: t("comparison4.title"),
+            hasFeature: [true, true, false],
+        },
+        {
+            // title: "Custom subdomains on a per-device basis",
+            title: t("comparison5.title"),
+            hasFeature: [false, false, true],
+        },
+    ];
+
     return (
         <div className={styles.container}>
             <TitleSubtitle
-                title={
-                    <>
-                        Why hapro is the better option for{" "}
-                        <span>Your Business</span>
-                    </>
-                }
-                subtitle="The solution you seek"
+                title={t.rich("title", {
+                    span: (children) => (
+                        <span className={styles.span}>{children}</span>
+                    ),
+                })}
+                subtitle={t("subtitle")}
                 centered
             />
             <table className={styles.table}>
@@ -76,9 +83,7 @@ export default function ComparisonTable() {
                     ))}
                 </tbody>
             </table>
-            <p className={styles.note}>
-                * Nabu Casa assigns your device a random subdomain
-            </p>
+            <p className={styles.note}>{t("note")}</p>
         </div>
     );
 }

@@ -1,8 +1,171 @@
 {
-    "home_page": {
-        "title": "Hello, World!"
+    "navigation": {
+        "home": "Home",
+        "faq": "FAQ",
+        "cta": "Join Now"
+    },
+    "landing": {
+        "hero": {
+            "title": "Home Assistant, <italic>For Businesses</italic>",
+            "subtitle": "A subtitle that says something about the frustrations of managing a fleet of Home Assistant devices as a business",
+            "cta": "Join Now",
+            "secondary_cta": "Learn More"
+        },
+        "problems": {
+            "title": "These problems are a thing of the past",
+            "subtitle": "No need to worry",
+            "problem1": {
+                "title": "Setup multiple devices <italic>with ease</italic>",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "problem2": {
+                "title": "<squiggle>No</squiggle> technical knowledge required",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "problem3": {
+                "title": "No more <italic>struggling</italic> with networks",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "services": {
+            "title": "Our services",
+            "subtitle": "What we offer",
+            "service1": {
+                "title": "Remote control",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "service2": {
+                "title": "Back-ups",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "service3": {
+                "title": "Mass management",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "testimonials": {
+            "title": "Take <italic>their</italic> word for it",
+            "subtitle": "Don't take our word for it"
+        },
+        "faq": {
+            "title": "Small questions, big answers",
+            "subtitle": "FAQ",
+            "description": "Find answers to commonly asked questions about our services, features and products below, for further assistance,",
+            "link": "check out our complete help page."
+        }
+    },
+    "partner": {
+        "hero": {
+            "title": "Register as a partner <scribble>today</scribble>",
+            "subtitle": "And join these companies"
+        },
+        "features": {
+            "title": "This is what you'll be getting",
+            "subtitle": "Straight to the point",
+            "feature1": {
+                "title": "dynamic DNS, SSL certificates, middleware, <italic>all set up for you</italic>",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "feature2": {
+                "title": "Manage <scribble>all</scribble> your installations from one central dashboard",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "feature3": {
+                "title": "Set up devices <italic>in advance</italic>, and simplify customer onboarding ",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "comparison": {
+            "title": "Why hapro is the better option for Your Business",
+            "subtitle": "The solution you seek",
+            "comparison1": {
+                "title": "Offers support for multiple devices in a single dashboard"
+            },
+            "comparison2": {
+                "title": "Aimed towards a professional user group"
+            },
+            "comparison3": {
+                "title": "Backup management on the cloud"
+            },
+            "comparison4": {
+                "title": "Connect with voice-assistants like Google Home and Alexa"
+            },
+            "comparison5": {
+                "title": "Custom subdomains on a per-device basis"
+            },
+            "note": "* Nabu Casa assigns your device a random subdomain"
+        },
+        "signup": {
+            "title": "Let us help you manage your devices today.",
+            "description": "Thank you for choosing hapro. Sign up using the form, we will reach out to you as soon as possible",
+            "form": {
+                "title": "Get Started",
+                "description": "Register as a partner below",
+                "company": {
+                    "label": "Name of your company",
+                    "placeholder": "Example Company"
+                },
+                "email": {
+                    "label": "Email",
+                    "placeholder": "email.example.com"
+                },
+                "location": {
+                    "label": "Location",
+                    "placeholder": "3445 AB, Sunset, Ave"
+                },
+                "phone": {
+                    "label": "Phone Number",
+                    "placeholder": "+31 6 12345678"
+                },
+                "website": {
+                    "label": "Website (optional)",
+                    "placeholder": "www.example.com"
+                },
+                "submit": "Sign Up Now",
+                "success": {
+                    "title": "Registration Sent",
+                    "description": "Thank you for registering as a partner. We will get back to you shortly. You may close this window."
+                }
+            }
+        }
+    },
+    "faq": {
+        "title": "What can we help you find?",
+        "subtitle": "FAQ",
+        "search_placeholder": "Search the faqs..."
+    },
+    "footer": {
+        "company": "Company",
+        "about": "About Us",
+        "contact": "Contact",
+        "platform": "Platform",
+        "documentation": "Documentation",
+        "faq": "FAQ",
+        "partner": "Become a Partner",
+        "legal": "Legal",
+        "terms": "Terms of Service",
+        "privacy": "Privacy Policy",
+        "cookie": "Cookie Policy"
+    },
+    "footer_cta": {
+        "title": "Become a partner today",
+        "subtitle": "Ready to take the leap?",
+        "cta": "Go To Partner Registration Page"
+    },
+    "contact_cta": {
+        "title": "Still have questions?",
+        "subtitle": "Our support team is always ready to help",
+        "cta": "Get In Touch"
+    },
+    "testimonials": {
+        "testimonial1": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "name": "John Doe",
+            "title": "CEO & Founder of Acme Inc."
+        }
     },
     "metadata": {
-        "title": "Hello, World!"
+        "title": "hapro | Home Assistant For Businesses",
+        "description": "hapro is the perfect solution for businesses looking to manage their fleet of Home Assistant devices with ease. No technical knowledge required. Get started today."
     }
 }

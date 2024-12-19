@@ -8,8 +8,11 @@ import Image from "next/image";
 
 import styles from "./PartnerFeatures.module.css";
 import TitleSubtitle from "@/components/type/TitleSubtitle";
+import { getTranslations } from "next-intl/server";
 
-export default function PartnerFeatures() {
+export default async function PartnerFeatures() {
+    const t = await getTranslations("partner.features");
+
     const slides = [
         <div className={styles.slide} key={0}>
             <Image
@@ -19,13 +22,12 @@ export default function PartnerFeatures() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    dynamic DNS, SSL certificates, middleware,{" "}
-                    <span>all set up for you</span>
+                    {t.rich("feature1.title", {
+                        italic: (children) => <span>{children}</span>,
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("feature1.description")}
                 </p>
             </div>
         </div>,
@@ -37,17 +39,17 @@ export default function PartnerFeatures() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    Manage{" "}
-                    <span className={styles.squiggle}>
-                        <span>all</span>
-                        <Image src={ProblemSquiggle} alt={"alt"} />
-                    </span>{" "}
-                    your installations from one central dashboard
+                    {t.rich("feature2.title", {
+                        scribble: (children) => (
+                            <span className={styles.squiggle}>
+                                <span>{children}</span>
+                                <Image src={ProblemSquiggle} alt={"alt"} />
+                            </span>
+                        ),
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("feature2.description")}
                 </p>
             </div>
         </div>,
@@ -59,13 +61,12 @@ export default function PartnerFeatures() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    Set up devices <span>in advance</span>, and simplify
-                    customer onboarding
+                    {t.rich("feature3.title", {
+                        italic: (children) => <span>{children}</span>,
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("feature3.description")}
                 </p>
             </div>
         </div>,
@@ -73,10 +74,7 @@ export default function PartnerFeatures() {
 
     return (
         <section className="section" id="problems">
-            <TitleSubtitle
-                title="This is what you'll be getting"
-                subtitle="Straight to the point"
-            />
+            <TitleSubtitle title={t("title")} subtitle={t("subtitle")} />
             <div className={styles.carouselWrapper}>
                 <Carousel options={{ loop: true }} slides={slides} />
             </div>

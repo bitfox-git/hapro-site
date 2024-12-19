@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Link, usePathname } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 
 type Link = {
     href: string;
@@ -17,20 +18,22 @@ const links: Link[] = [
     {
         href: "/",
         logo: true,
-        label: "Home",
+        label: "home",
     },
     {
         href: "/faq",
-        label: "FAQ",
+        label: "faq",
     },
     {
         href: "/partner",
         cta: true,
-        label: "Join Now",
+        label: "cta",
     },
 ];
 
 export default function Navigation() {
+    const t = useTranslations("navigation");
+
     const pathname = usePathname();
 
     const [showNavCta, setShowNavCta] = useState(true);
@@ -76,7 +79,7 @@ export default function Navigation() {
                                     height={22}
                                 />
                             ) : (
-                                link.label
+                                t(link.label)
                             )}
                         </Link>
                     </li>

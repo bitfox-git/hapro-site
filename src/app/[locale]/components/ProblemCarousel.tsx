@@ -8,8 +8,11 @@ import Image from "next/image";
 
 import styles from "./ProblemCarousel.module.css";
 import TitleSubtitle from "../../../components/type/TitleSubtitle";
+import { getTranslations } from "next-intl/server";
 
-export default function ProblemCarousel() {
+export default async function ProblemCarousel() {
+    const t = await getTranslations("landing.problems");
+
     const slides = [
         <div className={styles.slide} key={0}>
             <Image
@@ -19,12 +22,12 @@ export default function ProblemCarousel() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    Setup multiple devices <span>with ease</span>
+                    {t.rich("problem1.title", {
+                        italic: (children) => <span>{children}</span>,
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("problem1.description")}
                 </p>
             </div>
         </div>,
@@ -36,16 +39,20 @@ export default function ProblemCarousel() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    <span className={styles.squiggle}>
-                        <span>No</span>
-                        <Image src={ProblemSquiggle} alt={"alt"} />
-                    </span>{" "}
-                    technical knowledge required
+                    {t.rich("problem2.title", {
+                        squiggle: (children) => (
+                            <span className={styles.squiggle}>
+                                <span> {children}</span>
+                                <Image
+                                    src={ProblemSquiggle}
+                                    alt={"decorative squiggle"}
+                                />
+                            </span>
+                        ),
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("problem2.description")}
                 </p>
             </div>
         </div>,
@@ -57,12 +64,12 @@ export default function ProblemCarousel() {
             />
             <div className={styles.content}>
                 <h2 className={styles.title}>
-                    No more <span>struggling</span> with networks
+                    {t.rich("problem3.title", {
+                        italic: (children) => <span>{children}</span>,
+                    })}
                 </h2>
                 <p className={styles.description}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    {t("problem3.description")}
                 </p>
             </div>
         </div>,
@@ -70,10 +77,7 @@ export default function ProblemCarousel() {
 
     return (
         <section className="section" id="problems">
-            <TitleSubtitle
-                title="These problems are a thing of the past"
-                subtitle="No need to worry"
-            />
+            <TitleSubtitle title={t("title")} subtitle={t("subtitle")} />
             <div className={styles.carouselWrapper}>
                 <Carousel options={{ loop: true }} slides={slides} />
             </div>

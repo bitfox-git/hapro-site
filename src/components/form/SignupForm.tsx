@@ -6,6 +6,7 @@ import styles from "./SignupForm.module.css";
 import { Button, TextField } from "@radix-ui/themes";
 import { useState } from "react";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 
 export type SignupInputs = {
     company: string;
@@ -16,6 +17,8 @@ export type SignupInputs = {
 };
 
 export default function SignupForm() {
+    const t = useTranslations("partner.signup.form");
+
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
@@ -51,72 +54,69 @@ export default function SignupForm() {
     return (
         <div className={clsx(styles.container, submitted && styles.submitted)}>
             <div className={styles.text}>
-                <h2>Get Started</h2>
-                <p>Register as a partner below.</p>
+                <h2>{t("title")}</h2>
+                <p>{t("description")}</p>
             </div>
             <form
                 onSubmit={handleSubmit(onSubmit)}
                 className={clsx(styles.form, submitting && styles.submitting)}
             >
-                <label htmlFor="company">Name of your company</label>
+                <label htmlFor="company">{t("company.label")}</label>
                 <TextField.Root
                     type="text"
                     id="company"
-                    placeholder="Example Inc."
+                    placeholder={t("company.placeholder")}
                     size="3"
                     disabled={submitting}
                     {...register("company", { required: true })}
                 ></TextField.Root>
-                {errors.company && <span>This field is required</span>}
-                <label htmlFor="email">Email</label>
+                {errors.company && <span>{t("error.required")}</span>}
+                <label htmlFor="email">{t("email.label")}</label>
                 <TextField.Root
                     type="email"
                     id="email"
-                    placeholder="email@example.com"
+                    placeholder={t("email.placeholder")}
                     size="3"
                     disabled={submitting}
                     {...register("email", { required: true })}
                 ></TextField.Root>
-                {errors.email && <span>This field is required</span>}
-                <label htmlFor="location">Location</label>
+                {errors.email && <span>{t("error.required")}</span>}
+                <label htmlFor="location">{t("location.label")}</label>
                 <TextField.Root
                     type="text"
                     id="location"
-                    placeholder="3445 AB, Sunset Ave"
+                    placeholder={t("location.placeholder")}
                     size="3"
                     disabled={submitting}
                     {...register("location", { required: true })}
                 ></TextField.Root>
-                {errors.location && <span>This field is required</span>}
-                <label htmlFor="phone">Phone Number</label>
+                {errors.location && <span>{t("error.required")}</span>}
+                <label htmlFor="phone">{t("phone.label")}</label>
                 <TextField.Root
                     type="tel"
                     id="phone"
-                    placeholder="+31 6 1234 5678"
+                    placeholder={t("phone.placeholder")}
                     size="3"
                     disabled={submitting}
                     {...register("phone", { required: true })}
                 ></TextField.Root>
-                {errors.phone && <span>This field is required</span>}
-                <label htmlFor="website">Website (optional)</label>
+                {errors.phone && <span>{t("error.required")}</span>}
+                <label htmlFor="website">{t("website.label")}</label>
                 <TextField.Root
                     type="url"
                     id="website"
-                    placeholder="https://example.com"
+                    placeholder={t("website.placeholder")}
                     size="3"
                     disabled={submitting}
                     {...register("website", { required: false })}
                 ></TextField.Root>
                 <Button type="submit" size={"3"} loading={submitting}>
-                    Sign up now
+                    {t("submit")}
                 </Button>
             </form>
             <div className={styles.success}>
-                <h2>Registration Sent</h2>
-                <p>
-                    Thank you for registering as a partner. We will get back to
-                    you shortly. You may close this window.
-                </p>
+                <h2>{t("success.title")}</h2>
+                <p>{t("success.description")}</p>
             </div>
         </div>
     );

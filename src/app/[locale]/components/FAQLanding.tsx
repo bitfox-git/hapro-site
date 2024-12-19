@@ -6,9 +6,17 @@ import Accordion from "../../../components/accordion/Accordion";
 
 import { Link } from "@/i18n/routing";
 import { getFaqs } from "@/lib/actions";
+import { AcceptedLangs } from "@/lib/constants";
+import { getTranslations } from "next-intl/server";
 
-export default async function FAQLanding() {
-    const { faqs } = await getFaqs();
+export default async function FAQLanding({
+    locale,
+}: {
+    locale: AcceptedLangs;
+}) {
+    const t = await getTranslations("landing.faq");
+
+    const { faqs } = await getFaqs(locale);
 
     // flatten the faqs into a single string
     const faqsHtml = faqs
@@ -29,11 +37,13 @@ export default async function FAQLanding() {
         return array.map((faq, index) => {
             const [question, answer] = faq.split("</h1>");
 
+            // console.log(answer);
+
             return (
                 <Accordion key={index} title={question}>
                     <div
                         dangerouslySetInnerHTML={{
-                            __html: `<div>${answer.replace("<hr>", "")}</div>`,
+                            __html: `<div>${answer?.replace("<hr>", "")}</div>`,
                         }}
                     />
                 </Accordion>
@@ -43,15 +53,11 @@ export default async function FAQLanding() {
 
     return (
         <section className="section">
-            <TitleSubtitle
-                title="Small questions, big answers"
-                subtitle="FAQ"
-            />
+            <TitleSubtitle title={t("title")} subtitle={t("subtitle")} />
             <p className={styles.description}>
-                Find answers to commonly asked questions about our services,
-                features and products below, for further assistance,{" "}
+                {t("description")}{" "}
                 <RadixLink asChild>
-                    <Link href="/faq">check out our complete help page.</Link>
+                    <Link href="/faq">{t("link")}</Link>
                 </RadixLink>
             </p>
             <div className={styles.faqs}>

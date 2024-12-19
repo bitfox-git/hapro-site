@@ -1,8 +1,171 @@
 {
-    "home_page": {
-        "title": "Hallo, Wereld!"
+    "navigation": {
+        "home": "Home",
+        "faq": "FAQ",
+        "cta": "Registreer Nu"
+    },
+    "landing": {
+        "hero": {
+            "title": "Home Assistant, <italic>Voor Bedrijven</italic>",
+            "subtitle": "Een beschrijving die iets zegt over de frustraties van het managen van een vloot van apparaten als een bedrijf.",
+            "cta": "Registreer Nu",
+            "secondary_cta": "Lees Meer"
+        },
+        "problems": {
+            "title": "Deze problemen zijn van het verleden",
+            "subtitle": "Geen zorgen",
+            "problem1": {
+                "title": "Installeren <italic>zonder</italic> problemen",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "problem2": {
+                "title": "<squiggle>Geen</squiggle> technische kennis vereist",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "problem3": {
+                "title": "Geen <italic>geklooi</italic> met netwerken",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "services": {
+            "title": "Onze Services",
+            "subtitle": "Wat wij voor u doen",
+            "service1": {
+                "title": "Externe Toegang",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "service2": {
+                "title": "Back-ups",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "service3": {
+                "title": "Vlootbeheer",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "testimonials": {
+            "title": "Ervaringen van onze klanten",
+            "subtitle": "Nog niet overtuigd?"
+        },
+        "faq": {
+            "title": "Kleine vragen, grote antwoorden",
+            "subtitle": "FAQ",
+            "description": "Vind antwoorden op veelgestelde vragen over onze diensten, functies en producten hieronder, voor verdere assistentie",
+            "link": "zie onze hulp pagina"
+        }
+    },
+    "partner": {
+        "hero": {
+            "title": "Registreer als partner",
+            "subtitle": "En sluit je aan bij deze bedrijven"
+        },
+        "features": {
+            "title": "Dit is wat je krijgt",
+            "subtitle": "Recht op het doel af",
+            "feature1": {
+                "title": "dynamische DNS, SSL-certificaten, middleware, <italic>alles voor je ingesteld</italic>",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "feature2": {
+                "title": "Beheer <scribble>al</scribble> je installaties vanaf één centraal dashboard",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            "feature3": {
+                "title": "Stel apparaten <italic>van tevoren</italic> in en vereenvoudig de onboarding van klanten",
+                "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        },
+        "comparison": {
+            "title": "Waarom hapro de betere optie is voor uw bedrijf",
+            "subtitle": "De oplossing die u zoekt",
+            "comparison1": {
+                "title": "Biedt ondersteuning voor meerdere apparaten in één dashboard"
+            },
+            "comparison2": {
+                "title": "Gemaakt voor een professionele gebruikersgroep"
+            },
+            "comparison3": {
+                "title": "Back-upbeheer in de cloud"
+            },
+            "comparison4": {
+                "title": "Verbind met spraakassistenten zoals Google Home en Alexa"
+            },
+            "comparison5": {
+                "title": "Aangepaste subdomeinen per apparaat"
+            },
+            "note": "* Nabu Casa wijst uw apparaat een willekeurig subdomein toe"
+        },
+        "signup": {
+            "title": "Laat ons u vandaag nog helpen uw apparaten te beheren.",
+            "description": "Bedankt dat u voor hapro heeft gekozen. Meld u aan via het formulier, we nemen zo snel mogelijk contact met u op",
+            "form": {
+                "title": "Aan de slag",
+                "description": "Registreer hieronder als partner",
+                "company": {
+                    "label": "Naam van uw bedrijf",
+                    "placeholder": "Voorbeeldbedrijf"
+                },
+                "email": {
+                    "label": "E-mail",
+                    "placeholder": "email.voorbeeld.com"
+                },
+                "location": {
+                    "label": "Locatie",
+                    "placeholder": "3445 AB, Sunset, Ave"
+                },
+                "phone": {
+                    "label": "Telefoonnummer",
+                    "placeholder": "+31 6 12345678"
+                },
+                "website": {
+                    "label": "Website (optioneel)",
+                    "placeholder": "www.voorbeeld.com"
+                },
+                "submit": "Meld je nu aan",
+                "success": {
+                    "title": "Registratie Verzonden",
+                    "description": "Bedankt voor uw registratie als partner. We nemen binnenkort contact met u op. U kunt dit venster sluiten."
+                }
+            }
+        }
+    },
+    "faq": {
+        "title": "Waar kunnen we u mee helpen?",
+        "subtitle": "FAQ",
+        "search_placeholder": "Zoek naar een vraag..."
+    },
+    "footer": {
+        "company": "Bedrijf",
+        "about": "Over Ons",
+        "contact": "Contact",
+        "platform": "Platform",
+        "documentation": "Documentatie",
+        "faq": "FAQ",
+        "partner": "Word Partner",
+        "legal": "Juridisch",
+        "terms": "Algemene Voorwaarden",
+        "privacy": "Privacybeleid",
+        "cookie": "Cookiebeleid"
+    },
+    "footer_cta": {
+        "title": "Wordt vandaag nog partner",
+        "subtitle": "Klaar om te beginnen?",
+        "cta": "Ga Naar Registratie Pagina"
+    },
+    "contact_cta": {
+        "title": "Heeft u nog vragen?",
+        "subtitle": "Ons ondersteuningsteam staat altijd klaar om te helpen",
+        "cta": "Neem Contact Op"
+    },
+    "testimonials": {
+        "testimonial1": {
+            "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "name": "John Doe",
+            "title": "CEO & Founder of Acme Inc."
+        }
     },
     "metadata": {
-        "title": "Hallo, Wereld!"
+        "title": "hapro | Home Assistant Voor Bedrijven",
+        "description": "hapro is de perfecte oplossing voor bedrijven die hun vloot van Home Assistant-apparaten eenvoudig willen beheren. Geen technische kennis vereist. Begin vandaag nog."
     }
 }

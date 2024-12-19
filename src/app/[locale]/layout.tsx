@@ -12,7 +12,6 @@ import styles from "./layout.module.css";
 
 import { Geologica, Lora } from "next/font/google";
 import { Metadata } from "next";
-
 const geologica = Geologica({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
