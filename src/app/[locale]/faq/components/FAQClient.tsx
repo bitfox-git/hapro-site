@@ -9,10 +9,13 @@ import FAQs from "./FAQs";
 import TitleSubtitle from "@/components/type/TitleSubtitle";
 import { TextField } from "@radix-ui/themes";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { useTranslations } from "next-intl";
 
 type FAQClientProps = Awaited<ReturnType<typeof getFaqs>>;
 
 export default function FAQClient({ categories, faqs }: FAQClientProps) {
+    const t = useTranslations("faq");
+
     const categoryArray = Array.from(categories);
     const [category, setCategory] = useState(categoryArray[0]);
     const [search, setSearch] = useState<string>("");
@@ -22,12 +25,12 @@ export default function FAQClient({ categories, faqs }: FAQClientProps) {
             <div className={styles.hero}>
                 <div className={styles.heroContent}>
                     <TitleSubtitle
-                        title="What can we help you find?"
-                        subtitle="FAQ"
+                        title={t("title")}
+                        subtitle={t("subtitle")}
                         large
                     />
                     <TextField.Root
-                        placeholder="Search the faqs…"
+                        placeholder={t("search_placeholder")}
                         size={"3"}
                         className={styles.searchBox}
                         onChange={(e) => setSearch(e.target.value)}

@@ -3,7 +3,7 @@
 }
 
 .slide {
-    aspect-ratio: 360/277; /* from figma file */
+    height: 100%;
     max-width: calc(12.5vw * 6) /* 6 columns of the 8 column grid */;
     border-radius: 12px;
     overflow: hidden;
@@ -22,11 +22,10 @@
 }
 
 .content {
-    margin-top: auto;
     padding-inline: var(--font-md);
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     color: var(--gray-12);
     width: fit-content;
 }
@@ -55,9 +54,9 @@
         & img {
             position: absolute;
             width: 100%;
-            height: auto;
-            object-fit: contain;
-            bottom: -0.1rem;
+            height: 25%;
+            bottom: 0;
+            translate: 0 20%;
         }
     }
 }
@@ -68,6 +67,7 @@
     font-size: var(--font-base);
     font-weight: 400;
     opacity: 0.67;
+    margin-bottom: auto;
 }
 
 @media (max-width: 480px) {

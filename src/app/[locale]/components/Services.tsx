@@ -5,35 +5,50 @@ import Service1Illustration from "@/assets/landing/service-image-remotecontrol.j
 import Service2Illustration from "@/assets/landing/service-image-backups.svg";
 import Service3Illustration from "@/assets/landing/service-image-massmanagement.jpg";
 
+import { getTranslations } from "next-intl/server";
+
 import styles from "./Services.module.css";
 import clsx from "clsx";
 
-export default function Services() {
+export default async function Services() {
+    const t = await getTranslations("landing.services");
+
     const services: Omit<ServiceProps, "index" | "total">[] = [
         {
-            title: "Remote control",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            // title: "Remote control",
+            title: t("service1.title"),
+            // description:
+            //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: t("service1.description"),
             imageSrc: Service1Illustration,
         },
         {
-            title: "Backups",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            // title: "Backups",
+            title: t("service2.title"),
+            // description:
+            //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: t("service2.description"),
             imageSrc: Service2Illustration,
             align: "right",
         },
         {
-            title: "Mass management",
-            description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            // title: "Mass management",
+            title: t("service3.title"),
+            // description:
+            //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            description: t("service3.description"),
             imageSrc: Service3Illustration,
         },
     ];
 
     return (
         <section className={`section ${styles.container}`}>
-            <TitleSubtitle title="What we offer" subtitle="Our services" />
+            <TitleSubtitle
+                // title="What we offer"
+                title={t("title")}
+                //  subtitle="Our services"
+                subtitle={t("subtitle")}
+            />
             <div className={styles.services}>
                 {services.map((service, index) => (
                     <Service

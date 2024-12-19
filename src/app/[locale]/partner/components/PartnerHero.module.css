@@ -22,9 +22,9 @@
 }
 
 .scribbledText img {
-    width: 75%;
-    height: auto;
-    translate: 0 300%;
+    width: 100%;
+    height: 1.5vw;
+    translate: -10% 310%;
     user-select: none;
 }
 

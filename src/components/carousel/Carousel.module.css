@@ -88,11 +88,12 @@
 }
 
 .desktop {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: calc(100vw - 2 * var(--col-size));
+    gap: 2rem;
     margin-inline: auto;
     max-width: calc(1600px + 2rem);
-    padding-inline: 1rem;
 }
 
 @media screen and (max-width: 1440px) {

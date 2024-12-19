@@ -5,21 +5,24 @@ import { Link } from "@/i18n/routing";
 
 import styles from "./ContactCTA.module.css";
 import clsx from "clsx";
+import { getTranslations } from "next-intl/server";
 
-export default function ContactCTA() {
+export default async function ContactCTA() {
+    const t = await getTranslations("contact_cta");
+
     return (
         <section className={clsx("section", styles.container)}>
             <TitleSubtitle
                 centered
                 dark
                 titleFirst
-                title="Still have questions?"
-                subtitle="Our support team is always ready to help"
+                title={t("title")}
+                subtitle={t("subtitle")}
             />
             <Link href="/contact">
                 <Button size={"3"} className="mt-4">
                     <HandIcon />
-                    Get in touch
+                    {t("cta")}
                 </Button>
             </Link>
         </section>

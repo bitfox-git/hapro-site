@@ -8,10 +8,11 @@ import Services from "@/app/[locale]/components/Services";
 import Testimonials from "@/app/[locale]/components/Testimonials";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { use } from "react";
+import { AcceptedLangs } from "@/lib/constants";
 
 type HomeProps = Readonly<{
     params: Promise<{
-        locale: string;
+        locale: AcceptedLangs;
     }>;
 }>;
 
@@ -38,7 +39,7 @@ export default function Home({ params }: HomeProps) {
             <ProblemCarousel />
             <Services />
             <Testimonials />
-            <FAQLanding />
+            <FAQLanding locale={locale} />
             <Footer>
                 <FooterCTA />
             </Footer>

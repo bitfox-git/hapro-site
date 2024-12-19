@@ -6,39 +6,41 @@ import FooterGlowLine from "../../assets/footer/footer-glow-line.svg";
 import styles from "./Footer.module.css";
 import clsx from "clsx";
 import { Link } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 
-type FooterLink = {
-    title: string;
-    url: string;
-};
-
-type FooterLinkCategory = {
-    title: string;
-    links: FooterLink[];
-};
-
-const footerLinks: FooterLinkCategory[] = [
+const getFooterLinks = (t: (key: string) => string) => [
     {
-        title: "Company",
+        // title: "Company",
+        title: t("company"),
         links: [
-            { title: "About us", url: "/about" },
-            { title: "Contact us", url: "/contact" },
+            // { title: "About us", url: "/about" },
+            { title: t("about"), url: "/about" },
+            // { title: "Contact us", url: "/contact" },
+            { title: t("contact"), url: "/contact" },
         ],
     },
     {
-        title: "Platform",
+        // title: "Platform",
+        title: t("platform"),
         links: [
-            { title: "Documentation", url: "/docs" },
-            { title: "FAQ", url: "/faq" },
-            { title: "Become a partner", url: "/partner" },
+            // { title: "Documentation", url: "/docs" },
+            { title: t("documentation"), url: "/docs" },
+            // { title: "FAQ", url: "/faq" },
+            { title: t("faq"), url: "/faq" },
+            // { title: "Become a partner", url: "/partner" },
+            { title: t("partner"), url: "/partner" },
         ],
     },
     {
-        title: "Legal",
+        // title: "Legal",
+        title: t("legal"),
         links: [
-            { title: "Terms of service", url: "/terms" },
-            { title: "Privacy policy", url: "/privacy" },
-            { title: "Cookie policy", url: "/cookie" },
+            // { title: "Terms of service", url: "/terms" },
+            { title: t("terms"), url: "/terms" },
+            // { title: "Privacy policy", url: "/privacy" },
+            { title: t("privacy"), url: "/privacy" },
+            // { title: "Cookie policy", url: "/cookie" },
+            { title: t("cookie"), url: "/cookie" },
         ],
     },
 ];
@@ -46,7 +48,15 @@ const footerLinks: FooterLinkCategory[] = [
 const email = "contact@hapro.cloud";
 const phone = "+31 6 12345678";
 
-export default function Footer({ children }: { children?: React.ReactNode }) {
+export default async function Footer({
+    children,
+}: {
+    children?: React.ReactNode;
+}) {
+    const t = await getTranslations("footer");
+
+    const footerLinks = getFooterLinks(t);
+
     return (
         <footer className={clsx("section", styles.container)}>
             {children}
