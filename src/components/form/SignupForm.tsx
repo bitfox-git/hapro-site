@@ -4,6 +4,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 
 import styles from "./SignupForm.module.css";
 import { Button, TextField } from "@radix-ui/themes";
+import { useState } from "react";
+import clsx from "clsx";
 
 export type SignupInputs = {
     company: string;
@@ -14,20 +16,29 @@ export type SignupInputs = {
 };
 
 export default function SignupForm() {
+    const [submitting, setSubmitting] = useState(false);
+
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm<SignupInputs>();
 
-    const onSubmit: SubmitHandler<SignupInputs> = (data) => {
-        fetch("/api/email", {
+    const onSubmit: SubmitHandler<SignupInputs> = async (data) => {
+        if (submitting) return;
+
+        setSubmitting(true);
+        await fetch("/api/email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
         });
+
+        reset();
+        setSubmitting(false);
     };
 
     return (
@@ -36,13 +47,17 @@ export default function SignupForm() {
                 <h2>Get Started</h2>
                 <p>Register as a partner below.</p>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+            <form
+                onSubmit={handleSubmit(onSubmit)}
+                className={clsx(styles.form, submitting && styles.submitting)}
+            >
                 <label htmlFor="company">Name of your company</label>
                 <TextField.Root
                     type="text"
                     id="company"
                     placeholder="Example Inc."
                     size="3"
+                    disabled={submitting}
                     {...register("company", { required: true })}
                 ></TextField.Root>
                 {errors.company && <span>This field is required</span>}
@@ -52,6 +67,7 @@ export default function SignupForm() {
                     id="email"
                     placeholder="email@example.com"
                     size="3"
+                    disabled={submitting}
                     {...register("email", { required: true })}
                 ></TextField.Root>
                 {errors.email && <span>This field is required</span>}
@@ -61,6 +77,7 @@ export default function SignupForm() {
                     id="location"
                     placeholder="3445 AB, Sunset Ave"
                     size="3"
+                    disabled={submitting}
                     {...register("location", { required: true })}
                 ></TextField.Root>
                 {errors.location && <span>This field is required</span>}
@@ -70,6 +87,7 @@ export default function SignupForm() {
                     id="phone"
                     placeholder="+31 6 1234 5678"
                     size="3"
+                    disabled={submitting}
                     {...register("phone", { required: true })}
                 ></TextField.Root>
                 {errors.phone && <span>This field is required</span>}
@@ -79,9 +97,10 @@ export default function SignupForm() {
                     id="website"
                     placeholder="https://example.com"
                     size="3"
+                    disabled={submitting}
                     {...register("website", { required: false })}
                 ></TextField.Root>
-                <Button type="submit" size={"3"}>
+                <Button type="submit" size={"3"} loading={submitting}>
                     Sign up now
                 </Button>
             </form>
