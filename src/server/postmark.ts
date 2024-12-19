@@ -1,9 +1,12 @@
 "use server";
 
 import { SignupInputs } from "@/components/form/SignupForm";
+import { connection } from "next/server";
 import * as postmark from "postmark";
 
 export async function signupEmail(values: SignupInputs) {
+    await connection();
+
     const client = new postmark.ServerClient(
         process.env.POSTMARK_SERVER_TOKEN!
     );
