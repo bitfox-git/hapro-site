@@ -12,7 +12,7 @@
 }
 
 .title {
-    font-size: var(--font-md);
+    font-size: var(--font-baseque);
     font-weight: 400;
     color: var(--gray-12);
     text-wrap: balance;
@@ -54,7 +54,7 @@
 .content {
     interpolate-size: allow-keywords;
 
-    font-size: var(--font-md);
+    font-size: var(--font-base);
     font-weight: 300;
     color: var(--gray-10);
     padding-top: 0;
