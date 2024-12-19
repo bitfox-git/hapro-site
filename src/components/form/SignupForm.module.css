@@ -38,6 +38,12 @@
     line-height: 1;
 }
 
+.form span {
+    margin-top: -1.5rem;
+    font-size: var(--font-sm);
+    color: var(--orange-9);
+}
+
 .form button {
     width: fit-content;
     padding: 1rem 2rem;

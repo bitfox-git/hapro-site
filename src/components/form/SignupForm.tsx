@@ -5,19 +5,29 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import styles from "./SignupForm.module.css";
 import { Button, TextField } from "@radix-ui/themes";
 
-type Inputs = {
+export type SignupInputs = {
     company: string;
     email: string;
     location: string;
     phone: string;
-    website: string;
+    website?: string;
 };
 
 export default function SignupForm() {
-    const { register, handleSubmit } = useForm<Inputs>();
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm<SignupInputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<SignupInputs> = (data) => {
+        fetch("/api/email", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+        });
     };
 
     return (
@@ -35,6 +45,7 @@ export default function SignupForm() {
                     size="3"
                     {...register("company", { required: true })}
                 ></TextField.Root>
+                {errors.company && <span>This field is required</span>}
                 <label htmlFor="email">Email</label>
                 <TextField.Root
                     type="email"
@@ -43,6 +54,7 @@ export default function SignupForm() {
                     size="3"
                     {...register("email", { required: true })}
                 ></TextField.Root>
+                {errors.email && <span>This field is required</span>}
                 <label htmlFor="location">Location</label>
                 <TextField.Root
                     type="text"
@@ -51,6 +63,7 @@ export default function SignupForm() {
                     size="3"
                     {...register("location", { required: true })}
                 ></TextField.Root>
+                {errors.location && <span>This field is required</span>}
                 <label htmlFor="phone">Phone Number</label>
                 <TextField.Root
                     type="tel"
@@ -59,6 +72,7 @@ export default function SignupForm() {
                     size="3"
                     {...register("phone", { required: true })}
                 ></TextField.Root>
+                {errors.phone && <span>This field is required</span>}
                 <label htmlFor="website">Website (optional)</label>
                 <TextField.Root
                     type="url"
