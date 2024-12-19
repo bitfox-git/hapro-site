@@ -29,12 +29,6 @@
     border-radius: 12px;
 }
 
-@media screen and (max-width: 834px) {
-    .hero {
-        padding-block: 2rem;
-    }
-}
-
 .heroContent {
     grid-column: 2/-2;
     display: flex;
@@ -45,4 +39,20 @@
 .searchBox {
     max-width: 500px;
     line-height: 1;
+}
+
+@media screen and (max-width: 834px) {
+    .hero {
+        padding: 0;
+        background: none;
+    }
+
+    .heroContent {
+        grid-column: -1/1;
+    }
+
+    .searchBox {
+        width: 100%;
+        max-width: none;
+    }
 }

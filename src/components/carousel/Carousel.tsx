@@ -11,13 +11,21 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 
 import styles from "./Carousel.module.css";
+import clsx from "clsx";
 
 type PropType = {
     slides: ReactNode[];
     options?: EmblaOptionsType;
+    hideControls?: boolean;
+    forceCarousel?: boolean;
 };
 
-export default function Carousel({ slides, options }: PropType) {
+export default function Carousel({
+    slides,
+    options,
+    hideControls,
+    forceCarousel,
+}: PropType) {
     const [emblaRef, emblaApi] = useEmblaCarousel(options, [Autoplay()]);
 
     const onNavButtonClick = useCallback((emblaApi: EmblaCarouselType) => {
@@ -41,7 +49,12 @@ export default function Carousel({ slides, options }: PropType) {
 
     return (
         <>
-            <section className={styles.embla}>
+            <section
+                className={clsx(
+                    styles.embla,
+                    forceCarousel && styles.forceCarousel
+                )}
+            >
                 <div className={styles.embla__viewport} ref={emblaRef}>
                     <div className={styles.embla__container}>
                         {[...slides, ...slides].map((slide, index) => (
@@ -54,25 +67,29 @@ export default function Carousel({ slides, options }: PropType) {
                     </div>
                 </div>
 
-                <div className={styles.embla__controls}>
-                    <div className={styles.embla__buttons}>
-                        <PrevButton
-                            onClick={onPrevButtonClick}
-                            disabled={prevBtnDisabled}
-                        />
-                        <NextButton
-                            onClick={onNextButtonClick}
-                            disabled={nextBtnDisabled}
-                        />
+                {!hideControls && (
+                    <div className={styles.embla__controls}>
+                        <div className={styles.embla__buttons}>
+                            <PrevButton
+                                onClick={onPrevButtonClick}
+                                disabled={prevBtnDisabled}
+                            />
+                            <NextButton
+                                onClick={onNextButtonClick}
+                                disabled={nextBtnDisabled}
+                            />
+                        </div>
                     </div>
-                </div>
+                )}
             </section>
 
-            <div className={styles.desktop}>
-                {slides.map((slide, index) => (
-                    <div key={index}>{slide}</div>
-                ))}
-            </div>
+            {!forceCarousel && (
+                <div className={styles.desktop}>
+                    {slides.map((slide, index) => (
+                        <div key={index}>{slide}</div>
+                    ))}
+                </div>
+            )}
         </>
     );
 }

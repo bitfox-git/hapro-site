@@ -18,7 +18,12 @@ export default function FAQs({ search, faqs, category }: FAQsProps) {
             return faqs
                 .map((faq) => faq.faqs)
                 .flat()
-                .filter((faq) => faq.includes(search));
+                .filter((faq) => {
+                    const terms = search.split(" ");
+                    return terms.every((term) =>
+                        faq.toLowerCase().includes(term.toLowerCase())
+                    );
+                });
         }
 
         return faqs.find((faq) => faq.category === category)?.faqs;

@@ -22,6 +22,7 @@ body {
             [col-start] minmax(0px, 10rem) [col-end]
         )
         [center-end] minmax(calc(100vw / var(--col-count)), 1fr) [full-end];
+    --col-size: calc(100vw / var(--col-count));
 }
 
 @media (min-width: 834px) {
