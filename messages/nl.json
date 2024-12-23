@@ -134,6 +134,10 @@
         "subtitle": "FAQ",
         "search_placeholder": "Zoek naar een vraag..."
     },
+    "privacy" : {
+        "title" : "Transparant over uw gegevens",
+        "subtitle" : "Privacybeleid"
+    },
     "footer": {
         "company": "Bedrijf",
         "about": "Over Ons",
