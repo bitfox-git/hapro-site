@@ -54,3 +54,39 @@ export const getFaqs = async (lang: AcceptedLangs) => {
         }),
     };
 };
+
+export const getTerms = async (lang: AcceptedLangs) => {
+    const termsFile = await fs.readFile(
+        process.cwd() + `/public/content/${lang}/terms.md`,
+        "utf-8"
+    );
+
+    const termsHtmlRes = await unified()
+        .use(remarkParse)
+        .use(remarkRehype)
+        .use(rehypeSanitize)
+        .use(rehypeStringify)
+        .process(termsFile);
+
+    const termsHtml = termsHtmlRes.value as string;
+
+    const terms : { heading: string, paragraphs: string[] }[] = []; 
+
+    // Create pairs of headings and their content
+    termsHtml.split("<h1>").forEach((heading) => {
+        if(heading !== ""){
+            const headingContent = heading.split("</h1>")[0];
+            const afterHeadingContent = heading.split("</h1>")[1];
+            const paragraphs = afterHeadingContent.split("<p>").slice(1);
+            for(let i = 0; i < paragraphs.length; i++){
+                paragraphs[i] = paragraphs[i].split("</p>")[0];
+            }
+            terms.push({
+                heading: headingContent,
+                paragraphs,
+            });
+        }
+    });
+
+    return terms;
+};
