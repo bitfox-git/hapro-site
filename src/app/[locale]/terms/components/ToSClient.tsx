@@ -14,7 +14,7 @@ type ToSClientProps = {
 
 export default async function ToSClient({terms} : ToSClientProps) {
     const t = await getTranslations("terms");
-    console.log(terms);
+
     return (
         <div className={styles.container}>
             <div className={styles.hero}>
