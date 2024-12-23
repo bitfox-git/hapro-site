@@ -134,6 +134,10 @@
         "subtitle": "FAQ",
         "search_placeholder": "Zoek naar een vraag..."
     },
+    "terms" : {
+        "title" : "Zodat we het eens zijn",
+        "subtitle" : "Algemene Voorwaarden"
+    },
     "footer": {
         "company": "Bedrijf",
         "about": "Over Ons",
