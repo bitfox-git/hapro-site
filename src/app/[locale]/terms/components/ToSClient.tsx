@@ -30,12 +30,12 @@ export default async function ToSClient({terms} : ToSClientProps) {
             <div className={styles.textContent}>
                 {terms.map(({heading, paragraphs}) => {
                     return (
-                        <>
+                        <div key={heading}>
                             <h2>{heading}</h2>
                             {paragraphs.map((paragraph) => {
                                 return <p>{paragraph}</p>;
                             })}
-                        </>
+                        </div>
                     );
                 })}
             </div>
