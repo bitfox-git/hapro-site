@@ -134,6 +134,10 @@
         "subtitle": "FAQ",
         "search_placeholder": "Search the faqs..."
     },
+    "privacy" : {
+        "title" : "Transparent about your data",
+        "subtitle" : "Privacy Policy"
+    },
     "footer": {
         "company": "Company",
         "about": "About Us",
