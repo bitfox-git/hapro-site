@@ -134,6 +134,10 @@
         "subtitle": "FAQ",
         "search_placeholder": "Search the faqs..."
     },
+    "terms" : {
+        "title" : "For a clear agreement",
+        "subtitle" : "Terms of Service"
+    },
     "footer": {
         "company": "Company",
         "about": "About Us",
