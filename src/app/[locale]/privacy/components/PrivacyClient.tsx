@@ -2,7 +2,14 @@ import TitleSubtitle from "@/components/type/TitleSubtitle";
 import styles from "./PrivacyClient.module.css";
 import { getTranslations } from "next-intl/server";
 
-export default async function PrivacyClient() {
+type PrivacyClientProps = {
+    privacy: {
+        heading: string,
+        paragraphs: string[]
+    }[];
+}
+
+export default async function PrivacyClient({privacy} : PrivacyClientProps) {
     const t = await getTranslations("privacy");
 
     return (
@@ -18,8 +25,17 @@ export default async function PrivacyClient() {
             </div>
 
             <div className={styles.textContent}>
-                {/* Privacy Policy here, look into how to display this, probably going to look like Terms of Service */}
-            </div>
+                {privacy.map(({heading, paragraphs}) => {
+                    return (
+                        <div key={heading}>
+                            <h2>{heading}</h2>
+                            {paragraphs.map((paragraph) => {
+                                return <p>{paragraph}</p>;
+                            })}
+                        </div>
+                    );
+                })}                
+            </div>  
         </div>
     );
 }

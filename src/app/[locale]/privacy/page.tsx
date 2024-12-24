@@ -1,10 +1,21 @@
 import Footer from "@/components/footer/Footer";
 import PrivacyClient from "./components/PrivacyClient";
+import { getPrivacy } from "@/lib/actions";
+import { AcceptedLangs } from "@/lib/constants";
 
-export default function PrivacyPage() {
+type PrivacyPageProps = Readonly<{
+    params: Promise<{
+        locale: AcceptedLangs;
+    }>;
+}>;
+
+export default async function PrivacyPage({ params } : PrivacyPageProps) {
+    const { locale } = await params;
+    const privacy = await getPrivacy(locale);
+
     return (
         <>
-            <PrivacyClient />
+            <PrivacyClient privacy={privacy} />
             <Footer />
         </>
     );
