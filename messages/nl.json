@@ -166,6 +166,7 @@
     },
     "metadata": {
         "title": "hapro | Home Assistant Voor Bedrijven",
-        "description": "hapro is de perfecte oplossing voor bedrijven die hun vloot van Home Assistant-apparaten eenvoudig willen beheren. Geen technische kennis vereist. Begin vandaag nog."
+        "description": "hapro is de perfecte oplossing voor bedrijven die hun vloot van Home Assistant-apparaten eenvoudig willen beheren. Geen technische kennis vereist. Begin vandaag nog.",
+        "ogImageAlt": "hapro logo"
     }
 }
