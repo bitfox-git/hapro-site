@@ -12,6 +12,7 @@ import styles from "./layout.module.css";
 
 import { Geologica, Lora } from "next/font/google";
 import { Metadata } from "next";
+import Script from "next/script";
 const geologica = Geologica({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -60,6 +61,13 @@ export default async function LocaleLayout({
             lang={locale}
             className={`${geologica.className} ${lora.className}`}
         >
+            {process.env.NODE_ENV === "production" && (
+                <Script
+                    defer
+                    data-domain="hapro.cloud"
+                    src="https://plausible.server.bitfox.nl/js/script.js"
+                />
+            )}
             <body>
                 <NextIntlClientProvider messages={messages}>
                     <Theme

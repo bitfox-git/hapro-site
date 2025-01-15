@@ -6,6 +6,8 @@ import { Link, usePathname } from "@/i18n/routing";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { useTranslations } from "next-intl";
+import { Button, DropdownMenu } from "@radix-ui/themes";
+import { GlobeIcon } from "@radix-ui/react-icons";
 
 type Link = {
     href: string;
@@ -84,6 +86,27 @@ export default function Navigation() {
                         </Link>
                     </li>
                 ))}
+                <li className={styles.lang}>
+                    <DropdownMenu.Root>
+                        <DropdownMenu.Trigger>
+                            <Button variant="soft" size={"3"}>
+                                <GlobeIcon width={20} height={20} />
+                            </Button>
+                        </DropdownMenu.Trigger>
+                        <DropdownMenu.Content>
+                            <DropdownMenu.Item asChild>
+                                <Link href="/" locale="en">
+                                    EN
+                                </Link>
+                            </DropdownMenu.Item>
+                            <DropdownMenu.Item asChild>
+                                <Link href="/" locale="nl">
+                                    NL
+                                </Link>
+                            </DropdownMenu.Item>
+                        </DropdownMenu.Content>
+                    </DropdownMenu.Root>
+                </li>
             </ul>
         </nav>
     );
