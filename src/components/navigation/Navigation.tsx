@@ -73,7 +73,7 @@ export default function Navigation() {
                         >
                             {link.logo ? (
                                 <Image
-                                    src="/hapro-logo-full.svg"
+                                    src="/hapro-logo-full-dark.svg"
                                     alt="Logo"
                                     width={77}
                                     height={22}
