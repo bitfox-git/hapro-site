@@ -2,7 +2,8 @@
     position: sticky;
     top: 1rem;
     z-index: 10;
-    background-color: var(--gray-12);
+    background-color: color-mix(in lab, var(--gray-4) 90%, transparent);
+    backdrop-filter: blur(1rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,13 +23,13 @@
 }
 
 .nav ul li a {
-    color: var(--gray-1);
+    color: var(--gray-12);
     text-decoration: none;
     font-weight: medium;
     transition: color 0.2s ease-out;
 
     &:hover {
-        color: var(--gray-5);
+        color: var(--gray-11);
     }
 }
 
@@ -43,13 +44,12 @@
 }
 
 .nav .cta {
-    margin-right: -0.4rem;
     background: var(--orange-9);
     color: var(--gray-2);
     padding: 0.5rem 1rem;
     border-radius: 6px;
     transition: background 0.2s ease-out, color 0.2s ease-out,
-        padding 0.2s ease-out, margin-right 0.2s ease-out;
+        padding 0.2s ease-out;
 }
 
 .nav .cta.active {
@@ -59,8 +59,7 @@
 .nav .cta.hide {
     background: transparent;
     padding: 0;
-    color: var(--gray-1);
-    margin-right: 0;
+    color: var(--gray-12);
 }
 
 .nav .cta:not(.hide):hover {
@@ -69,5 +68,5 @@
 }
 
 .nav .cta.hide:hover {
-    color: var(--gray-5);
+    color: var(--gray-11);
 }
