@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![image](https://github.com/user-attachments/assets/50435af7-2da9-4b79-800d-5b90a8f3930c)
 
-## Getting Started
+This is the repository for the landing page site of hapro. 
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Description](#description)
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Authors](#authors)
+- [Related](#related)
+
+## Description
+
+Hapro-site is the repository for the site located at [hapro.cloud](https://hapro.cloud). This readme is created to guide you through how to develop and deploy the project.
+
+This site is meant to serve as an entrypoint for people to sign up for an account to start using hapro. You can find the related repositories at the end of this readme.
+
+## Installation
+
+> [!important]
+> To install the project locally you will need to have pnpm installed. [You can find a guide to install it here](https://pnpm.io/installation).
+
+Once you have pnpm installed you can install the dependencies by running ``pnpm i``. Congrats! You've installed the project.
+
+## Setup
+
+Create a ``.env`` file in the root of the project and fill in the following variables:
+```env
+POSTMARK_SERVER_TOKEN=<YOUR_POSTMARK_SERVER_TOKEN>
+POSTMARK_RECEIVER_EMAIL=<YOUR_EMAIL_TO_RECIEVE_SIGNUPS>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+To run the project in development mode (used during development) you can simply run the following command in your terminal:
+```shell
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+If you want to preview the production build you can run the following command in your terminal:
+```shell
+pnpm build
+```
 
-## Learn More
+After the build successfully finishes you can preview it by running the following command:
+```shell
+pnpm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Authors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [@Wouter-Missler](https://www.github.com/Wouter-Missler)
+- [@voslucas](https://www.github.com/vosLucas)
+- [@DeShowErwt](https://github.com/DeShowErwt)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Related
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [hapro-admin (hapro portal interface)](https://github.com/bitfox-git/hapro-admin)
+- [hapro-addon (addon for home assistant)](https://github.com/bitfox-git/hapro-addon)
