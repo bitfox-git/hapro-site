@@ -2,11 +2,7 @@
     position: sticky;
     top: 1rem;
     z-index: 10;
-    background-color: color-mix(
-        in lab,
-        var(--color-background) 70%,
-        transparent
-    );
+    background-color: color-mix(in lab, var(--gray-4) 90%, transparent);
     backdrop-filter: blur(1rem);
     display: flex;
     justify-content: space-between;
