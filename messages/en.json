@@ -169,6 +169,7 @@
     },
     "metadata": {
         "title": "hapro | Home Assistant For Businesses",
-        "description": "hapro is the perfect solution for businesses looking to manage their fleet of Home Assistant devices with ease. No technical knowledge required. Get started today."
+        "description": "hapro is the perfect solution for businesses looking to manage their fleet of Home Assistant devices with ease. No technical knowledge required. Get started today.",
+        "ogImageAlt": "hapro logo"
     }
 }
