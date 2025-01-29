@@ -3,17 +3,16 @@
 import TitleSubtitle from "@/components/type/TitleSubtitle";
 import styles from "./ToSClient.module.css";
 import { getTranslations } from "next-intl/server";
+import { getTerms } from "@/lib/actions";
 
-// I saw a way fancier way you did this at FAQ but I was unable to reproduce it so I did it this way
 type ToSClientProps = {
-    terms: {
-        heading: string;
-        paragraphs: string[];
-    }[];
+    terms: Awaited<ReturnType<typeof getTerms>>;
 };
 
 export default async function ToSClient({ terms }: ToSClientProps) {
     const t = await getTranslations("terms");
+
+    console.log(terms);
 
     return (
         <div className={styles.container}>
