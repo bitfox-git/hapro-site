@@ -134,6 +134,12 @@
         "subtitle": "FAQ",
         "search_placeholder": "Search the faqs..."
     },
+    "terms": {
+        "title": "Terms of Service"
+    },
+    "privacy": {
+        "title": "Privacy Policy"
+    },
     "footer": {
         "company": "Company",
         "about": "About Us",

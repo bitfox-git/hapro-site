@@ -1,0 +1,25 @@
+# 1. Voorwaarden
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius ratione libero voluptatibus saepe minima quod! Harum, pariatur! Ut nisi tempore eligendi dolorum delectus modi commodi error quisquam quia! Accusamus, explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur debitis ducimus suscipit repellendus nesciunt commodi culpa corrupti? Aspernatur magnam, officiis delectus, optio accusantium repellat dolores similique odio est aut numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum sint, vitae hic ratione earum porro facere? Vel fugit ex adipisci voluptatem obcaecati, voluptatum aspernatur, officia necessitatibus deserunt aperiam qui reprehenderit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil ad magni asperiores. Sed placeat ipsum sunt neque a cupiditate repudiandae aliquid maiores tempore reiciendis? Aliquam modi doloribus consequatur odit non.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta impedit ducimus explicabo doloremque est iure numquam quos dolores. Error, autem labore consequatur quisquam deserunt quod? Laudantium voluptatum eius et perspiciatis. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, corrupti deleniti. Placeat nesciunt impedit atque incidunt quibusdam unde quidem cum rerum neque labore! Deleniti impedit voluptate dicta asperiores, quasi quam!
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. In sequi provident libero, odit corrupti voluptate voluptates reiciendis. Vero velit fugiat aliquid. Minima, nemo dolorem? Quam tempore facilis debitis ratione asperiores. Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae vitae deleniti odit ipsa, deserunt incidunt aliquam est porro fugit culpa, non eligendi dolorum maxime ratione praesentium eos, perferendis esse inventore! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, repellat voluptatem. Atque ea adipisci mollitia quidem non cumque omnis sunt. Vitae adipisci voluptate ducimus porro minima maiores esse velit laudantium.
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam animi nam, dolorum quidem aut qui obcaecati! Rerum, harum possimus aliquam totam eos excepturi, aperiam repellat quae est velit libero eveniet.
+
+# 2. Disclaimer
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga incidunt possimus unde tempore, quibusdam magnam optio repellat quae repellendus! Rem culpa alias excepturi libero deleniti mollitia laudantium, sunt expedita labore. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus mollitia minus laudantium nobis magnam consequuntur eaque veniam, cum optio eligendi dolorem qui modi. Quo culpa, quasi aliquid ipsum nemo eaque.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur repellendus delectus amet in aperiam, consequuntur neque natus numquam reiciendis quod cupiditate repudiandae recusandae. Dolorum asperiores molestiae repellat, corporis quibusdam quis!
+
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque commodi, dignissimos, quas optio rerum quidem accusantium molestiae, libero corporis iure autem minima voluptas aperiam perferendis repellat maiores nulla voluptatum eos! Lorem ipsum dolor sit amet consectetur adipisicing elit. In ea minima eligendi cum natus quaerat odit, provident laudantium tenetur vitae veniam voluptatum quae! Temporibus, at doloremque. Alias expedita porro quis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, doloremque maxime. Facere cumque nostrum dolorem culpa voluptate soluta asperiores, temporibus eius sapiente veritatis numquam ipsum impedit, dolor vero in et. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat doloremque blanditiis facere commodi soluta amet at. Dolor nulla, doloremque accusamus iste, tempore exercitationem at recusandae, officia unde non velit facilis! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, eligendi sapiente incidunt unde numquam aliquam necessitatibus molestiae facilis omnis, veritatis, error accusantium adipisci maxime voluptatem nostrum temporibus illo quibusdam ipsam!
+
+# 3. Aansprakelijkheid
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam minus deleniti, iusto, explicabo voluptatum id cum qui rem ea dolorum iste nobis facilis, consequatur earum. Mollitia totam illum unde nobis? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque modi dolor est, deserunt eum ducimus. Nostrum voluptatibus ducimus ipsa illo assumenda odit a et voluptatem, delectus doloremque saepe hic inventore!
+
+# 4. Nauwkeurigheid van materiaal
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas mollitia explicabo, iusto ducimus necessitatibus illo sequi ex sed vel consequatur accusamus, aliquid labore. At doloribus vitae est animi quidem quos. Nostrum voluptatibus ducimus ipsa illo assumenda odit a et voluptatem, delectus doloremque saepe hic inventore!

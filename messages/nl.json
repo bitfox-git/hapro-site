@@ -134,6 +134,12 @@
         "subtitle": "FAQ",
         "search_placeholder": "Zoek naar een vraag..."
     },
+    "terms": {
+        "title": "Algemene Voorwaarden"
+    },
+    "privacy": {
+        "title": "Privacybeleid"
+    },
     "footer": {
         "company": "Bedrijf",
         "about": "Over Ons",
