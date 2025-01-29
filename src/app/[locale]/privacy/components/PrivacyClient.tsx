@@ -14,11 +14,7 @@ export default async function PrivacyClient({ privacy }: PrivacyClientProps) {
         <div className={styles.container}>
             <div className={styles.hero}>
                 <div className={styles.heroContent}>
-                    <TitleSubtitle
-                        title={t("title")}
-                        subtitle={t("subtitle")}
-                        large
-                    />
+                    <TitleSubtitle title={t("title")} large />
                 </div>
             </div>
 
