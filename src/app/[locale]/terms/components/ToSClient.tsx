@@ -6,39 +6,35 @@ import { getTranslations } from "next-intl/server";
 
 // I saw a way fancier way you did this at FAQ but I was unable to reproduce it so I did it this way
 type ToSClientProps = {
-    terms: { 
-        heading: string, 
-        paragraphs: string[]
-    }[]
-}
+    terms: {
+        heading: string;
+        paragraphs: string[];
+    }[];
+};
 
-export default async function ToSClient({terms} : ToSClientProps) {
+export default async function ToSClient({ terms }: ToSClientProps) {
     const t = await getTranslations("terms");
 
     return (
         <div className={styles.container}>
             <div className={styles.hero}>
                 <div className={styles.heroContent}>
-                    <TitleSubtitle
-                        title={t("title")}
-                        subtitle={t("subtitle")}
-                        large
-                    />
+                    <TitleSubtitle title={t("title")} large />
                 </div>
             </div>
 
             <div className={styles.textContent}>
-                {terms.map(({heading, paragraphs}) => {
+                {terms.map(({ heading, paragraphs }) => {
                     return (
                         <div key={heading}>
                             <h2>{heading}</h2>
-                            {paragraphs.map((paragraph) => {
-                                return <p>{paragraph}</p>;
+                            {paragraphs.map((paragraph, index) => {
+                                return <p key={index}>{paragraph}</p>;
                             })}
                         </div>
                     );
                 })}
             </div>
         </div>
-    )
+    );
 }
